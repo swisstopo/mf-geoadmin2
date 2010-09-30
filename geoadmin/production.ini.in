@@ -26,16 +26,6 @@ beaker.session.secret = somesecret
 #beaker.cache.data_dir = %(here)s/data/cache
 #beaker.session.data_dir = %(here)s/data/sessions
 
-# SQLAlchemy database URL
-sqlalchemy.url = postgres://${dbuser}:${dbpassword}@${dbhost}:${dbport}/${db}
-
-# TileCache
-tilecache.cfg = %(here)s/tilecache/tilecache.cfg
-
-# MapFish printer controller
-print.jar = %(here)s/print/print-standalone-1.2-SNAPSHOT.jar
-print.config = %(here)s/print/config.yaml
-
 # WARNING: *THE LINE BELOW MUST BE UNCOMMENTED ON A PRODUCTION ENVIRONMENT*
 # Debug mode will enable the interactive debugging tool, allowing ANYONE to
 # execute malicious code after an exception is raised.
