@@ -1,0 +1,3 @@
+include geoadmin/config/deployment.ini_tmpl
+recursive-include geoadmin/public *
+recursive-include geoadmin/templates *

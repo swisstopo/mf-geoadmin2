@@ -1,0 +1,7 @@
+#<Proxy ajp://localhost:8009/print-geoadmin-${instanceid}>
+#    Order deny,allow
+#    Allow from all
+#</Proxy>
+
+#ProxyPass        /${vars:instanceid}/wsgi/print/ ajp://localhost:8009/print-geoadmin-${instanceid}/
+#ProxyPassReverse /${vars:instanceid}/wsgi/print/ ajp://localhost:8009/print-geoadmin-${instanceid}/
