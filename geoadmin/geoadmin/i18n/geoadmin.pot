@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: geoadmin 0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2010-09-30 11:31+0200\n"
+"POT-Creation-Date: 2010-10-01 10:27+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,4 +16,32 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.5\n"
+
+#: geoadmin/templates/index.header.html:3
+msgid "Federal Administration admin.ch"
+msgstr ""
+
+#: geoadmin/templates/index.header.html:23
+msgid "Homepage"
+msgstr ""
+
+#: geoadmin/templates/index.header.html:25
+msgid "Help"
+msgstr ""
+
+#: geoadmin/templates/index.header.html:27
+msgid "RSS"
+msgstr ""
+
+#: geoadmin/templates/index.header.html:29
+msgid "Twitter"
+msgstr ""
+
+#: geoadmin/templates/index.header.html:31
+msgid "Contact"
+msgstr ""
+
+#: geoadmin/templates/index.html:6
+msgid "map.geo.admin.ch"
+msgstr ""
 
