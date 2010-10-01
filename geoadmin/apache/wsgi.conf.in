@@ -1,17 +1,16 @@
-# Serve pylons static files via apache:
-Alias /${vars:instanceid}/wsgi/app/   ${buildout:directory/geoadmin/public/app/}
-Alias /${vars:instanceid}/wsgi/build/ ${buildout:directory/geoadmin/public/build/}
-Alias /${vars:instanceid}/wsgi/lib/   ${buildout:directory/geoadmin/public/lib/}
+RewriteEngine On
+ExpiresActive On
 
-<IfModule !mod_wsgi.c>
-    LoadModule wsgi_module /usr/lib/apache2/modules/mod_wsgi.so
-</IfModule>
+# Static files with normal cache:
+RewriteRule ^/${vars:instanceid}/wsgi/(app|build|lib)/(.*)$  ${buildout:directory/geoadmin/public/$1/$2}
 
-# uncomment this if you need HTTP authentication/authorization to work (with
-# repoze.who or any other security toolkit), see the Apache mod_wsgi FAQ to
-# understand why mod_wsgi doesn't pass the user credentials to the WSGI
-# application by default.
-# http://code.google.com/p/modwsgi/wiki/FrequentlyAskedQuestions#Access_Control_Mechanisms
-#WSGIPassAuthorization On
+# Static files with aggressive cache:
+RewriteRule ^/${vars:instanceid}/wsgi/[0-9a-fA-F]*/(app|build|lib)/(.*)$  ${buildout:directory/geoadmin/public/$1/$2}
+<LocationMatch "/${vars:instanceid}/wsgi/[0-9a-fA-F]*/(app|build|lib)/">
+    ExpiresDefault "now plus 1 year"
+    Header merge Cache-Control "public"
+
+    Header set X-Powered-By http://imgs.xkcd.com/comics/python.png
+</LocationMatch>
 
 WSGIScriptAlias /${vars:instanceid}/wsgi ${buildout:directory/buildout/parts/modwsgi/wsgi}

@@ -1,0 +1,35 @@
+<div id="header">
+  <div style="height: 103px">
+    <a class="adminCHlink" href="http://www.admin.ch/index.html?lang=${c.lang}">${_('Federal Administration admin.ch')}</a>
+    <img style="" src="${url(h.versioned('/app/images/logo.ch.jpeg'))}" />
+  </div>
+
+  <div class="navServiceBackground">
+    <div class="webSpracheDiv" style="float: right">
+      <ul class="inline-list">
+        <li><a class="${'selected' if c.lang == 'de' else ''}" href="?lang=de" title="Diese Seite auf deutsch">Deutsch</a></li>
+        <li class="pipe">&nbsp;</li>
+        <li><a class="${'selected' if c.lang == 'fr' else ''}" href="?lang=fr" title="Cette page en fran&ccedil;ais">Fran&ccedil;ais</a></li>
+        <li class="pipe">&nbsp;</li>
+        <li><a class="${'selected' if c.lang == 'it' else ''}" href="?lang=it" title="Questa pagina in italiano">Italiano</a></li>
+        <li class="pipe">&nbsp;</li>
+        <li><a class="${'selected' if c.lang == 'rm' else ''}" href="?lang=rm" title="Questa pagina en rumantsch">Rumantsch</a></li>
+        <li class="pipe">&nbsp;</li>
+        <li><a class="${'selected' if c.lang == 'en' else ''}" href="?lang=en" title="This site in English">English</a></li>
+      </ul>
+    </div>
+    <div id="webServiceContentDiv" style="float: left">
+      <ul class="inline-list">
+        <li><a href="">${_('Homepage')}</a></li>
+        <li class="pipe">&nbsp;</li>
+        <li><a target="_blank" href="http://www.geo.admin.ch/internet/geoportal/${c.lang}/commons/help/viewer_help.html" target="_blank">${_('Help')}</a></li>
+        <li class="pipe">&nbsp;</li>
+        <li><a target="_blank" href="http://www.geo.admin.ch/internet/geoportal/${c.lang}/home/current.enhRSS.html">${_('RSS')}</a></li>
+        <li class="pipe">&nbsp;</li>
+        <li><a target="_blank" href="http://www.twitter.com/swiss_geoportal">${_('Twitter')}</a></li>
+        <li class="pipe">&nbsp;</li>
+        <li><a target="_blank" href="http://www.geo.admin.ch/internet/geoportal/${c.lang}/tools/contact.html">${_('Contact')}</a></li>
+      </ul>
+    </div>
+  </div>
+</div>

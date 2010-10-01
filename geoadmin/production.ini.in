@@ -14,6 +14,7 @@ error_email_from = paste@localhost
 use = egg:geoadmin
 full_stack = true
 static_files = false
+version = ${app-version}
 
 cache_dir = /tmp/geoadmin-${instanceid}_beaker_data
 uploads_dir = /tmp/geoadmin-${instanceid}_uploads
@@ -32,7 +33,7 @@ beaker.session.secret = somesecret
 set debug = false
 
 # Default application language
-default_lang = fr
+default_lang = de
 
 # Logging configuration
 [loggers]

@@ -1,16 +1,8 @@
 /*
- * @include OpenLayers/Projection.js
- * @include OpenLayers/Map.js
- * @include OpenLayers/Layer/XYZ.js
- * @include OpenLayers/Control/Navigation.js
- * @include OpenLayers/Control/PanPanel.js
- * @include OpenLayers/Control/ZoomPanel.js
- * @include OpenLayers/Control/ArgParser.js
- * @include OpenLayers/Control/Attribution.js
- * @include OpenLayers/Control/ScaleLine.js
- * @include OpenLayers/Control/OverviewMap.js
+ * @include Map/lib/Map.js
  * @include GeoExt/widgets/MapPanel.js
  * @include App/Tools.js
+ * @include Features/lib/Tooltip.js
  */
 
 Ext.namespace('App');
@@ -27,20 +19,7 @@ App.Map = function(options) {
 
     // Private
 
-    /**
-     * Method: getLayers
-     * Returns the list of layers.
-     *
-     * Returns:
-     * {Array({OpenLayers.Layer})} An array of OpenLayers.Layer objects.
-     */
-    var getLayers = function() {
-        var osm = new OpenLayers.Layer.OSM();
-        return [osm];
-    };
-
     // Public
-
     Ext.apply(this, {
 
         /**
@@ -51,43 +30,25 @@ App.Map = function(options) {
     });
 
     // Main
+    map = new GeoAdmin.Map();
+    map.switchComplementaryLayer("ch.swisstopo.pixelkarte-farbe", {
+        opacity: 100
+    });
 
-    // create map
-    var mapOptions = {
-        projection: new OpenLayers.Projection("EPSG:900913"),
-        maxExtent: new OpenLayers.Bounds(
-            -20037508.34, 
-            -20037508.34,
-            20037508.34, 
-            20037508.34
-        ),
-        restrictedExtent: new OpenLayers.Bounds(
-            275784,
-            5444704,
-            972278,
-            5939405
-        ),
-        units: "m",
-        theme: null, // or OpenLayers will attempt to load it default theme
-        controls: [
-            new OpenLayers.Control.Navigation(),
-            new OpenLayers.Control.PanPanel(),
-            new OpenLayers.Control.ZoomPanel(),
-            new OpenLayers.Control.ArgParser(),
-            new OpenLayers.Control.Attribution(),
-            new OpenLayers.Control.ScaleLine(),
-            new OpenLayers.Control.OverviewMap({mapOptions: {theme: null}})
-        ]
-    };
-    var map = new OpenLayers.Map(mapOptions);
-    map.addLayers(getLayers());
+    map.addControls([new GeoAdmin.Tooltip({
+        layer: map.vector,
+        autoActivate: true
+    })]);
 
-    // create map panel
-    var tools = new App.Tools(map);
+    var toolbar = new App.Tools(map);
     options = Ext.apply({
         map: map,
-        tbar: tools.tbar,
-        bbar: tools.bbar,
+        tbar: {
+            items: toolbar.tbar
+        },
+        bbar: {
+            items: toolbar.bbar
+        },
         stateId: "map",
         prettyStateKeys: true
     }, options);

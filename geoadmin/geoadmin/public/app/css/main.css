@@ -1,32 +1,141 @@
 html, body {
-    background-color: white;
-    font-family: tahoma, arial, verdana, sans-serif;
+  background-color: white;
+  font-family: tahoma, arial, verdana, sans-serif;
 }
-.app-accordion-body {
-    padding: 3px;
+
+a:link, a:active, a:visited {
+    color: #006699;
 }
-.x-toolbar .maxExtent {
-    background: url('../images/map_magnify.png') top left no-repeat;
+
+#header {
+  background: white url(../images/logo.dept.png) no-repeat fixed right top;
 }
-.x-toolbar .mapZoomIn {
-    background: url('../images/zoom_in.png') top left no-repeat;
+
+#header a {
+  color: black;
+  text-decoration: none;
+  font-size: 11px;
+  line-height: 11px;
 }
-.x-toolbar .mapZoomOut {
-    background: url('../images/zoom_out.png') top left no-repeat;
+
+.inline-list {
+  list-style-type: none;
 }
-.x-toolbar .mapHistoryPrevious {
-    background: url('../images/arrow_left.png') top left no-repeat;
+.inline-list li {
+  display: inline;
+  float: left;
 }
-.x-toolbar .mapHistoryNext {
-    background: url('../images/arrow_right.png') top left no-repeat;
+
+.selected {
+  font-weight: bold;
 }
-.x-toolbar .mapMeasurePosition {
-    background: url('../images/bullet_orange.png') top left no-repeat;
+
+.pipe {
+  background-image: url(../images/pipe.gif);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  width: 9px;
 }
-.x-toolbar .permalink {
-    background: url('../images/permalink.png') top left no-repeat;
+
+.adminCHlink {
+  float: right;
+  padding: 3px 20px;
+  font-weight: bold;
 }
-.olControlScaleLine {
-    padding: 2px;
-    background-color: rgba(255, 255, 255, 0.6);
+
+.navServiceBackground {
+  height: 20px;
+  background-color: #ccc;
+  border-top: 1px solid white;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.x-toolbar {
+  background-image: none;
+  background-color: white;
+}
+
+.x-panel-noborder .x-panel-tbar-noborder .x-toolbar,
+.x-panel-noborder .x-panel-bbar-noborder .x-toolbar {
+  border: 0;
+}
+.x-panel-noborder .x-panel-tbar-noborder .x-toolbar {
+  border-top: 1px solid black;
+}
+
+.x-panel-noborder .x-panel-header-noborder {
+    border: 0;
+}
+/*************************/
+
+.x-panel-header,
+.x-tab-strip-top .x-tab-right, .x-tab-strip-top .x-tab-left, .x-tab-strip-top .x-tab-strip-inner,
+.x-tab-strip span.x-tab-strip-text {
+    background-image: none;
+    background-color: #333;
+}
+
+.x-panel-header,
+.x-tab-strip span.x-tab-strip-text {
+    color: white;
+    text-align: center;
+}
+
+.x-tab-strip-top .x-tab-strip-active .x-tab-right span.x-tab-strip-text,
+.x-tab-strip-top .x-tab-strip-active .x-tab-right,  
+.x-tab-strip-top .x-tab-strip-active .x-tab-left {
+    background-color: red;
+}
+
+/*************************/
+.x-btn button {
+    color: black;
+}
+.x-toolbar .link, .x-toolbar .print {
+    font-weight: bold;
+}
+
+.x-toolbar .expand, .x-toolbar .collapse {
+    background-image: url(../images/tb_toggle_button.png);
+}
+
+.x-toolbar .expand {
+    background-position: -16px 0;
+}
+.x-toolbar .collapse {
+    background-position: 0 0;
+}
+
+.x-toolbar .link {
+    background-image: url(../images/tb_link_logo.png);
+}
+.x-toolbar .print {
+    background-image: url(../images/tb_print_logo.png);
+}
+.x-btn-text-icon .x-btn-icon-small-right .x-btn-text {
+    padding-right: 25px;
+}
+/*************************/
+
+.x-tool-close {
+    background-image: url(../images/close_button.png);
+    background-position: center center;
+}
+
+#side-panel-xcollapsed {
+    display: none !important;
+}
+
+
+.x-toolbar .x-btn-no-over .x-btn-tl,
+.x-toolbar .x-btn-no-over .x-btn-tc,
+.x-toolbar .x-btn-no-over .x-btn-tr,
+.x-toolbar .x-btn-no-over .x-btn-ml,
+.x-toolbar .x-btn-no-over .x-btn-mc,
+.x-toolbar .x-btn-no-over .x-btn-mr,
+.x-toolbar .x-btn-no-over .x-btn-bl,
+.x-toolbar .x-btn-no-over .x-btn-bc,
+.x-toolbar .x-btn-no-over .x-btn-br {
+    background-image: none;
 }

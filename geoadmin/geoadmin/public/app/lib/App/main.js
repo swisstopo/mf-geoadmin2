@@ -1,21 +1,26 @@
 /*
  * @include App/Map.js
- * @include App/LayerTree.js
- * @include App/Print.js
+ * @include LayerTree/lib/LayerTree.js
+ * @include CatalogTree/lib/CatalogTree.js
+ * @include BodSearch/lib/BodSearchComboBox.js
  */
 
 /*
- * This file represents the application's entry point. 
+ * This file represents the application's entry point.
  * OpenLayers and Ext globals are set, and the page
  * layout is created.
  */
+
+Ext.ns("GeoAdmin");
+//GeoAdmin.webServicesUrl = "http://mf-chsdi.bgdi.admin.ch";
+GeoAdmin.webServicesUrl = "http://mf-chsdi0t.bgdi.admin.ch";
 
 window.onload = function() {
 
     /*
      * Setting of OpenLayers global vars.
      */
-    OpenLayers.Lang.setCode(OpenLayers.Util.getParameters().lang || "fr");
+    OpenLayers.Lang.setCode(OpenLayers.Util.getParameters().lang);
     OpenLayers.Number.thousandsSeparator = ' ';
     OpenLayers.IMAGE_RELOAD_ATTEMPTS = 5;
 
@@ -27,49 +32,70 @@ window.onload = function() {
     /*
      * Initialize the application.
      */
-    
+
     var mapPanel = (new App.Map({
-        region: "center"
+        border: false,
+        region: "center",
+        bodyStyle: 'border: 1px solid black;',
     })).mapPanel;
 
-    var headerPanel = new Ext.Panel({
+    var header = new Ext.Panel({
         region: 'north',
-        height: 100,
+        height: 125,
         contentEl: 'header'
     });
-    
-    var layerTreePanel = (new App.LayerTree(mapPanel.layers, {
-        title: OpenLayers.i18n("layertree")
-    })).layerTreePanel;
-
-    var printPanel = (new App.Print(mapPanel, {
-        title: OpenLayers.i18n("print"),
-        labelAlign: 'top',
-        defaults: {
-            anchor:'100%'
-        }
-    })).printPanel;
 
     // the viewport
     new Ext.Viewport({
         layout: "border",
         items: [
-            headerPanel,
+            header,
             mapPanel,
-            { 
-                region: "east",
-                layout: "accordion",
+            {
+                region: "west",
+                id: 'side-panel',
+                animCollapse: false,
                 width: 300,
-                minWidth: 300,
-                maxWidth: 400,
-                split: true,
-                collapseMode: "mini",
                 border: false,
+                tbar: ['->', {
+                    id: 'side-panel-collapse',
+//                     text: 'collapse',
+//                     iconAlign: 'right',
+                    cls: 'x-btn-no-over',
+                    iconCls: 'collapse',
+                    handler: function(b) {
+                        Ext.getCmp('side-panel').collapse();
+                        b.hide();
+                        Ext.getCmp('side-panel-expand').show();
+                    }
+                }],
                 defaults: {
                     autoScroll: true,
-                    bodyCssClass: 'app-accordion-body'
+                    border: false
                 },
-                items: [layerTreePanel, printPanel]
+                items: [new GeoAdmin.LayerTree({
+                    map: mapPanel.map
+                }), {
+                    xtype: 'tabpanel',
+                    activeTab: 0,
+                    defaults: {
+                        autoScroll: true,
+                        border: false,
+                        autoHeight: true
+                    },
+                    items: [new GeoAdmin.CatalogTree({
+                                title: OpenLayers.i18n('Catalog'),
+                                map: mapPanel.map
+                            }), {
+                                title: OpenLayers.i18n('Search'),
+                                bodyStyle: 'padding: 3px;',
+                                layout: 'anchor',
+                                items: [new GeoAdmin.BodSearchComboBox({
+                                    anchor: '100%',
+                                    map: mapPanel.map
+                                })]
+                          }]
+                }]
             }
         ]
     });

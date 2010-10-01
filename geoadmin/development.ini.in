@@ -20,6 +20,8 @@ use = config:production.ini
 static_files = true
 set debug = true
 
+version =  # keep this empty !
+
 # Logging configuration
 [loggers]
 keys = root, routes, geoadmin, sqlalchemy

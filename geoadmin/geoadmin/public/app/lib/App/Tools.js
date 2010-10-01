@@ -1,23 +1,9 @@
 /*
- * @include OpenLayers/Control/ZoomToMaxExtent.js
- * @include OpenLayers/Control/ZoomBox.js
- * @include OpenLayers/Control/ZoomOut.js
- * @include OpenLayers/Control/NavigationHistory.js
- * @include OpenLayers/Handler/Path.js
- * @include OpenLayers/Handler/Polygon.js
- * @include OpenLayers/Control/Measure.js
- * @include OpenLayers/Layer/Vector.js
- * @include OpenLayers/Renderer/SVG.js
- * @include OpenLayers/Renderer/VML.js
- * @include OpenLayers/StyleMap.js
- * @include OpenLayers/Style.js
- * @include OpenLayers/Rule.js
- * @include OpenLayers/Handler.js
- * @include GeoExt/widgets/Action.js
- * @include GeoExt.ux/MeasureLength.js
- * @include GeoExt.ux/MeasureArea.js
- * @include App/Locator.js
- * @include App/Permalink.js
+ * @requires GeoExt/data/ScaleStore.js
+ * @requires BaseLayerTool/lib/BaseLayerTool.js
+ * @requires MousePosition/lib/MousePositionBox.js
+ * @requires NavigationHistory/lib/NavigationHistory.js
+ * @requires SwissSearch/lib/SwissSearchComboBox.js
  */
 
 Ext.namespace('App');
@@ -45,64 +31,26 @@ App.Tools = function(map) {
      * {Array} An array of toolbar items.
      */
     var getTbarItems = function(map) {
-        var zoomToMaxExtent = new GeoExt.Action({
-            control: new OpenLayers.Control.ZoomToMaxExtent(),
-            map: map,
-            iconCls: 'maxExtent',
-            tooltip: OpenLayers.i18n("Tools.maxextentactiontooltip")
-        });
-        var zoomIn = new GeoExt.Action({
-            control: new OpenLayers.Control.ZoomBox(),
-            map: map,
-            toggleGroup: map.id + '_tools',
-            allowDepress: true,
-            iconCls: 'mapZoomIn'
-        });
-        var zoomOut = new GeoExt.Action({
-            control: new OpenLayers.Control.ZoomOut(),
-            map: map,
-            iconCls: 'mapZoomOut'
-        });
-
-        var history = new OpenLayers.Control.NavigationHistory();
-        map.addControl(history);
-        var historyPrevious = new GeoExt.Action({
-            control: history.previous,
-            disabled: true,
-            iconCls: 'mapHistoryPrevious'
-        });
-        var historyNext = new GeoExt.Action({
-            control: history.next,
-            disabled: true,
-            iconCls: 'mapHistoryNext'
-        });
-
-        var permalink = (new App.Permalink()).action;
-
-        var measureLength = new GeoExt.ux.MeasureLength({
-            map: map,
-            toggleGroup: map.id + '_tools',
-            tooltip: OpenLayers.i18n("Tools.measurelengthactiontooltip")
-        });
-        var measureArea = new GeoExt.ux.MeasureArea({
-            map: map,
-            toggleGroup: map.id + '_tools',
-            tooltip: OpenLayers.i18n("Tools.measureareaactiontooltip")
-        });
-
-        var locator = (new App.Locator(map, {
-            toggleGroup: map.id + '_tools',
-            tooltip: OpenLayers.i18n("Tools.measurepositionactiontooltip"),
-            iconCls: 'mapMeasurePosition'
-        })).action;
-
-        return [
-            zoomToMaxExtent, zoomIn, zoomOut, '-',
-            historyPrevious, historyNext, permalink, '-',
-            measureLength, measureArea, locator
-        ];
+        var expand = {
+            id: 'side-panel-expand',
+            iconCls: 'expand',
+            cls: 'x-btn-no-over',
+            hidden: true,
+            handler: function(b) {
+                Ext.getCmp('side-panel').expand();
+                b.hide();
+                Ext.getCmp('side-panel-collapse').show();
+            }
+        };
+        return [expand, 
+                new GeoAdmin.BaseLayerTool({map: map, slider: {width: 100}}),
+                new GeoAdmin.NavigationHistory({map: map}).items,
+                new GeoAdmin.SwissSearchComboBox({map: map, width: 200}),
+                '->',
+                {text: 'link', iconAlign: 'right', iconCls: 'link'},
+                {text: 'print', iconAlign: 'right', iconCls: 'print'}];
     };
-    
+
     /**
      * Method: getBbarItems
      * Return the bottom toolbar items.
@@ -114,7 +62,25 @@ App.Tools = function(map) {
      * {Array} An array of toolbar items.
      */
     var getBbarItems = function(map) {
-        return [];
+        var scale = {
+            xtype: 'combo',
+            store: new GeoExt.data.ScaleStore({map: map}),
+            tpl: '<tpl for="."><div class="x-combo-list-item">1 : {[parseInt(values.scale)]}</div></tpl>',
+            editable: false,
+            mode: 'local',
+            triggerAction: 'all',
+            map: map,
+            listeners: {
+                select: function(combo, record, index) {
+                    combo.map.zoomTo(record.get('level'));
+                }
+            }
+        };
+        return [scale, ' ',
+                new GeoAdmin.MousePositionBox({map: this.map}), '->',
+                {xtype: 'tbtext', text: '<a href="http://www.geo.admin.ch/">geo.admin.ch</a>'},
+                {xtype: 'tbtext', text: '&nbsp;', cls: 'pipe'}, 
+                {xtype: 'tbtext', text: '<a href="http://www.geo.admin.ch/">geo.admin.ch</a>'}]
     };
 
     // Public
@@ -135,12 +101,7 @@ App.Tools = function(map) {
     });
 
     // Main
-    this.tbar = new Ext.Toolbar({ 
-        items: getTbarItems(map) 
-    });
+    this.tbar = getTbarItems(map);
 
-    this.bbar = new Ext.Toolbar({ 
-        items: getBbarItems(map) 
-    });
-
+    this.bbar = getBbarItems(map);
 };
