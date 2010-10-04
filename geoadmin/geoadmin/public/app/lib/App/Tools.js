@@ -47,8 +47,8 @@ App.Tools = function(map) {
                 new GeoAdmin.NavigationHistory({map: map}).items,
                 new GeoAdmin.SwissSearchComboBox({map: map, width: 200}),
                 '->',
-                {text: 'link', iconAlign: 'right', iconCls: 'link'},
-                {text: 'print', iconAlign: 'right', iconCls: 'print'}];
+                {text: 'link', iconAlign: 'right', iconCls: 'link', cls: 'x-btn-no-over'},
+                {text: 'print', iconAlign: 'right', iconCls: 'print', cls: 'x-btn-no-over'}];
     };
 
     /**
