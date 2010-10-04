@@ -44,11 +44,16 @@ App.Tools = function(map) {
         };
         return [expand, 
                 new GeoAdmin.BaseLayerTool({map: map, slider: {width: 100}}),
-                new GeoAdmin.NavigationHistory({map: map}).items,
+                new GeoAdmin.NavigationHistory({defaults: {cls: 'x-btn-no-over'}, map: map}).items,
                 new GeoAdmin.SwissSearchComboBox({map: map, width: 200}),
                 '->',
-                {text: 'link', iconAlign: 'right', iconCls: 'link', cls: 'x-btn-no-over'},
-                {text: 'print', iconAlign: 'right', iconCls: 'print', cls: 'x-btn-no-over'}];
+                {
+                    text: 'link', 
+                    iconAlign: 'right', 
+                    iconCls: 'link', 
+//                     cls: 'x-btn-no-over',
+                    enableToggle: true
+                }];
     };
 
     /**

@@ -1,5 +1,6 @@
 /*
  * @include App/Map.js
+ * @include App/Print.js
  * @include LayerTree/lib/LayerTree.js
  * @include CatalogTree/lib/CatalogTree.js
  * @include BodSearch/lib/BodSearchComboBox.js
@@ -45,6 +46,10 @@ window.onload = function() {
         contentEl: 'header'
     });
 
+    var printAction = new App.Print(mapPanel).printAction;
+
+    mapPanel.getTopToolbar().add(printAction);
+
     // the viewport
     new Ext.Viewport({
         layout: "border",
@@ -63,6 +68,7 @@ window.onload = function() {
 //                     iconAlign: 'right',
                     cls: 'x-btn-no-over',
                     iconCls: 'collapse',
+                    tooltip: 'fixme',
                     handler: function(b) {
                         Ext.getCmp('side-panel').collapse();
                         b.hide();
