@@ -9,8 +9,7 @@ RewriteRule ^/${vars:instanceid}/wsgi/[0-9a-fA-F]*/(app|build|lib)/(.*)$  ${buil
 <LocationMatch "/${vars:instanceid}/wsgi/[0-9a-fA-F]*/(app|build|lib)/">
     ExpiresDefault "now plus 1 year"
     Header merge Cache-Control "public"
-
-    Header set X-Powered-By http://imgs.xkcd.com/comics/python.png
+    Header unset Etag
 </LocationMatch>
 
 WSGIScriptAlias /${vars:instanceid}/wsgi ${buildout:directory/buildout/parts/modwsgi/wsgi}
