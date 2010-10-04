@@ -12,6 +12,7 @@
 % else:
         <link rel="stylesheet" type="text/css" href="${url(h.versioned('/build/app.css'))}" />
 % endif
+        <script type="text/javascript" src="${url('/print/pdf/info.json', var='printCapabilities', url=url('/print/pdf/info.json'))}"></script>
 
 % if c.debug:
         <!-- fixme -->
