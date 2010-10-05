@@ -43,7 +43,7 @@ App.Tools = function(map) {
             }
         };
         return [expand, 
-                new GeoAdmin.BaseLayerTool({map: map, slider: {width: 100}}),
+                new GeoAdmin.BaseLayerTool({map: map, slider: {width: 100}}).items,
                 new GeoAdmin.NavigationHistory({defaults: {cls: 'x-btn-no-over'}, map: map}).items,
                 new GeoAdmin.SwissSearchComboBox({map: map, width: 200}),
                 '->',
