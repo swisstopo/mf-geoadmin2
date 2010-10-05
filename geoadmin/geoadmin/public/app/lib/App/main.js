@@ -37,7 +37,7 @@ window.onload = function() {
     var mapPanel = (new App.Map({
         border: false,
         region: "center",
-        bodyStyle: 'border: 1px solid black;',
+        bodyStyle: 'border: 1px solid black;'
     })).mapPanel;
 
     var header = new Ext.Panel({
