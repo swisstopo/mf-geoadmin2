@@ -21,7 +21,10 @@ window.onload = function() {
     /*
      * Setting of OpenLayers global vars.
      */
-    OpenLayers.Lang.setCode(OpenLayers.Util.getParameters().lang);
+
+    var parameters = OpenLayers.Util.getParameters();
+
+    OpenLayers.Lang.setCode(parameters.lang);
     OpenLayers.Number.thousandsSeparator = ' ';
     OpenLayers.IMAGE_RELOAD_ATTEMPTS = 5;
 
@@ -43,7 +46,8 @@ window.onload = function() {
     var header = new Ext.Panel({
         region: 'north',
         height: 125,
-        contentEl: 'header'
+        contentEl: 'header',
+        hidden: !!(parameters.noHeader)
     });
 
     var printAction = new App.Print(mapPanel).printAction;
