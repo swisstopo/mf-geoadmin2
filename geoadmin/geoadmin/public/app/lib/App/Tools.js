@@ -43,7 +43,7 @@ App.Tools = function(map) {
             }
         };
         return [expand, 
-                new GeoAdmin.BaseLayerTool({map: map, slider: {width: 100}}).items,
+                new GeoAdmin.BaseLayerTool({map: map, slider: {width: 100}}),
                 new GeoAdmin.NavigationHistory({defaults: {cls: 'x-btn-no-over'}, map: map}).items,
                 new GeoAdmin.SwissSearchComboBox({map: map, width: 200}),
                 '->',
@@ -67,22 +67,7 @@ App.Tools = function(map) {
      * {Array} An array of toolbar items.
      */
     var getBbarItems = function(map) {
-        var scale = {
-            xtype: 'combo',
-            store: new GeoExt.data.ScaleStore({map: map}),
-            tpl: '<tpl for="."><div class="x-combo-list-item">1 : {[parseInt(values.scale)]}</div></tpl>',
-            editable: false,
-            mode: 'local',
-            triggerAction: 'all',
-            map: map,
-            listeners: {
-                select: function(combo, record, index) {
-                    combo.map.zoomTo(record.get('level'));
-                }
-            }
-        };
-        return [scale, ' ',
-                new GeoAdmin.MousePositionBox({map: this.map}), '->',
+        return [new GeoAdmin.MousePositionBox({map: this.map}), '->',
                 {xtype: 'tbtext', text: '<a href="http://www.geo.admin.ch/">geo.admin.ch</a>'},
                 {xtype: 'tbtext', text: '&nbsp;', cls: 'pipe'}, 
                 {xtype: 'tbtext', text: '<a href="http://www.geo.admin.ch/">geo.admin.ch</a>'}]
