@@ -1,5 +1,4 @@
 """Pylons middleware initialization"""
-from beaker.middleware import SessionMiddleware
 from paste.cascade import Cascade
 from paste.registry import RegistryManager
 from paste.urlparser import StaticURLParser
@@ -39,9 +38,8 @@ def make_app(global_conf, full_stack=True, static_files=True, **app_conf):
     # The Pylons WSGI app
     app = PylonsApp(config=config)
 
-    # Routing/Session Middleware
+    # Routing Middleware
     app = RoutesMiddleware(app, config['routes.map'], singleton=False)
-    app = SessionMiddleware(app, config)
 
     # CUSTOM MIDDLEWARE HERE (filtered by error handling middlewares)
 

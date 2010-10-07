@@ -18,14 +18,11 @@ version = ${app-version}
 
 cache_dir = /tmp/geoadmin-${instanceid}_beaker_data
 uploads_dir = /tmp/geoadmin-${instanceid}_uploads
-beaker.session.key = geoadmin
-beaker.session.secret = somesecret
 
 # If you'd like to fine-tune the individual locations of the cache data dirs
-# for the Cache data, or the Session saves, un-comment the desired settings
+# for the Cache data, un-comment the desired settings
 # here:
 #beaker.cache.data_dir = %(here)s/data/cache
-#beaker.session.data_dir = %(here)s/data/sessions
 
 # WARNING: *THE LINE BELOW MUST BE UNCOMMENTED ON A PRODUCTION ENVIRONMENT*
 # Debug mode will enable the interactive debugging tool, allowing ANYONE to
