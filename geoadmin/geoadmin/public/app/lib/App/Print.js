@@ -38,13 +38,6 @@ App.Print = function(mapPanel, options) {
     this.printAction = new GeoAdmin.Print({
         printPanelOptions: {
             mapPanel: mapPanel,
-            printProvider: new GeoExt.data.PrintProvider({
-                capabilities: printCapabilities,
-                baseParams: {
-                    url: printCapabilities.createURL
-                },
-                listeners: printEvents
-            })
         },
         iconAlign: 'right',
         iconCls: 'print',
