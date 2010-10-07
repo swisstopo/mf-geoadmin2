@@ -13,7 +13,7 @@ setup(
     author_email='',
     url='',
     install_requires=[
-        "mapfish>=2.0,<=2.0.99",
+#        "mapfish>=2.0,<=2.0.99",
         "Babel<=0.9.99"
     ],
     #setup_requires=["PasteScript>=1.6.3"],
@@ -26,7 +26,6 @@ setup(
             ('templates/**', 'mako', {'input_encoding': 'utf-8'}),
             ('public/**', 'ignore', None)]},
     zip_safe=False,
-    #paster_plugins=['MapFish', 'PasteScript', 'Pylons', 'geoadmin'],
     entry_points="""
     [paste.app_factory]
     main = geoadmin.config.middleware:make_app
