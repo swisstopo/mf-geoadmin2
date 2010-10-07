@@ -13,7 +13,7 @@ setup(
     author_email='',
     url='',
     install_requires=[
-#        "mapfish>=2.0,<=2.0.99",
+        "Pylons>=1.0,<=1.0.99",
         "Babel<=0.9.99"
     ],
     #setup_requires=["PasteScript>=1.6.3"],
