@@ -116,17 +116,10 @@ a:link, a:active, a:visited {
 .x-btn-text-icon .x-btn-icon-small-right .x-btn-text {
     padding-right: 25px;
 }
-/*************************/
-
-.x-tool-close {
-    background-image: url(../images/close_button.png);
-    background-position: center center;
-}
 
 #side-panel-xcollapsed {
     display: none !important;
 }
-
 
 .x-toolbar .x-btn-no-over .x-btn-tl,
 .x-toolbar .x-btn-no-over .x-btn-tc,
