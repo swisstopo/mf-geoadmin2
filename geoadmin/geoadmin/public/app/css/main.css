@@ -1,5 +1,4 @@
 html, body {
-  background-color: white;
   font-family: tahoma, arial, verdana, sans-serif;
 }
 
@@ -7,7 +6,12 @@ a:link, a:active, a:visited {
     color: #006699;
 }
 
+.x-border-layout-ct {
+  background-color: white;
+}
+
 #header {
+  background-color: white;
   background: white url(../images/logo.dept.png) no-repeat fixed right top;
 }
 
