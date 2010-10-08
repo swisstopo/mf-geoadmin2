@@ -43,12 +43,12 @@ window.onload = function() {
         bodyStyle: 'border: 1px solid black;'
     })).mapPanel;
 
-    var header = new Ext.Panel({
+    var header = {
+        xtype: 'box',
         region: 'north',
-        height: 125,
         contentEl: 'header',
         hidden: !!(parameters.noHeader)
-    });
+    };
 
     var printAction = new App.Print(mapPanel).printAction;
 
@@ -91,6 +91,7 @@ window.onload = function() {
                     items: [{
                                 title: OpenLayers.i18n('Catalog'),
                                 autoScroll: true,
+                                autoHeight: true,
                                 items: [{
                                     xtype: 'ga_catalogtree',
                                     map: mapPanel.map    
