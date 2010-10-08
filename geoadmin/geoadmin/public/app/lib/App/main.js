@@ -61,15 +61,13 @@ window.onload = function() {
             header,
             mapPanel,
             {
-                region: "west",
+                region: 'west',
                 id: 'side-panel',
                 animCollapse: false,
                 width: 300,
                 border: false,
                 tbar: ['->', {
                     id: 'side-panel-collapse',
-//                     text: 'collapse',
-//                     iconAlign: 'right',
                     cls: 'x-btn-no-over',
                     iconCls: 'collapse',
                     tooltip: 'fixme',
@@ -80,30 +78,33 @@ window.onload = function() {
                     }
                 }],
                 defaults: {
-                    autoScroll: true,
                     border: false
                 },
                 items: [new GeoAdmin.LayerTree({
                     map: mapPanel.map
                 }), {
                     xtype: 'tabpanel',
+                    plain: true,
+                    baseCls: 'side-panel-tab',
+                    tabMargin: 0,
                     activeTab: 0,
-                    defaults: {
-                        autoScroll: true,
-                        border: false,
-                        autoHeight: true
-                    },
-                    items: [new GeoAdmin.CatalogTree({
+                    items: [{
                                 title: OpenLayers.i18n('Catalog'),
-                                map: mapPanel.map
-                            }), {
+                                autoScroll: true,
+                                items: [{
+                                    xtype: 'ga_catalogtree',
+                                    map: mapPanel.map    
+                                }]
+                            }, {
                                 title: OpenLayers.i18n('Search'),
                                 bodyStyle: 'padding: 3px;',
+                                autoHeight: true,
                                 layout: 'anchor',
-                                items: [new GeoAdmin.BodSearchComboBox({
+                                items: [{
+                                    xtype: 'ga_bodsearchcombo',
                                     anchor: '100%',
                                     map: mapPanel.map
-                                })]
+                                }]
                           }]
                 }]
             }
