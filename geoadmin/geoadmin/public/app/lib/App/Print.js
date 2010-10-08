@@ -37,11 +37,17 @@ App.Print = function(mapPanel, options) {
 
     this.printAction = new GeoAdmin.Print({
         printPanelOptions: {
-            mapPanel: mapPanel,
+            mapPanel: mapPanel
         },
+//         windowOptions: {
+//             listeners: {
+//                 "hide": function(w) {
+//                     this.printAction.toggle();
+//                 }.createDelegate(this)
+//             }
+//         },
         iconAlign: 'right',
         iconCls: 'print',
-//      cls: 'x-btn-no-over',
         enableToggle: true
     });
 };
