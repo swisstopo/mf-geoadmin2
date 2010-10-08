@@ -83,7 +83,7 @@ a:link, a:active, a:visited {
 }
 
 .x-tab-strip-top .x-tab-strip-active .x-tab-right span.x-tab-strip-text,
-.x-tab-strip-top .x-tab-strip-active .x-tab-right,  
+.x-tab-strip-top .x-tab-strip-active .x-tab-right,
 .x-tab-strip-top .x-tab-strip-active .x-tab-left {
     background-color: red;
 }
@@ -131,4 +131,25 @@ a:link, a:active, a:visited {
 .x-toolbar .x-btn-no-over .x-btn-bc,
 .x-toolbar .x-btn-no-over .x-btn-br {
     background-image: none;
+}
+
+.side-panel-tab ul.x-tab-strip {
+    width: auto;
+    border-bottom: 0;
+}
+.side-panel-tab ul.x-tab-strip li {
+    margin-left: 0;
+    width: 50%;
+}
+.side-panel-tab ul.x-tab-strip li.x-tab-edge,
+.side-panel-tab .x-tab-strip-spacer {
+    display: none;
+}
+
+.side-panel-tab .x-tab-strip-top .x-tab-strip-active .x-tab-right span.x-tab-strip-text {
+    padding-bottom: 4px;
+}
+
+.side-panel-tab .x-tab-strip-top .x-tab-strip-active .x-tab-right {
+    margin-bottom: auto;
 }
