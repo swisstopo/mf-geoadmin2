@@ -3,7 +3,7 @@ Installation
 
 Install the buildout environment:
 
-  python bootstrap.py --distribute
+  python bootstrap.py --distribute --version 1.5.2
 
 Install the project:
 
