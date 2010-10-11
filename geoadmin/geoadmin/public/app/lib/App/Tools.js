@@ -1,4 +1,5 @@
 /*
+ * @requires Permalink/lib/Permalink.js
  * @requires GeoExt/data/ScaleStore.js
  * @requires BaseLayerTool/lib/BaseLayerTool.js
  * @requires MousePosition/lib/MousePositionBox.js
@@ -42,18 +43,18 @@ App.Tools = function(map) {
                 Ext.getCmp('side-panel-collapse').show();
             }
         };
+        var link = new GeoAdmin.Permalink({
+            text: 'link', 
+            iconAlign: 'right', 
+            iconCls: 'link', 
+//          cls: 'x-btn-no-over',
+            enableToggle: true
+        });
         return [expand, 
                 new GeoAdmin.BaseLayerTool({map: map, slider: {width: 100}}),
                 new GeoAdmin.NavigationHistory({defaults: {cls: 'x-btn-no-over'}, map: map}),
                 new GeoAdmin.SwissSearchComboBox({map: map, width: 200}),
-                '->',
-                {
-                    text: 'link', 
-                    iconAlign: 'right', 
-                    iconCls: 'link', 
-//                     cls: 'x-btn-no-over',
-                    enableToggle: true
-                }];
+                '->', link];
     };
 
     /**

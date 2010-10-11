@@ -50,7 +50,13 @@ App.Map = function(options) {
             items: toolbar.bbar
         },
         stateId: "map",
-        prettyStateKeys: true
+        prettyStateKeys: true,
+        getState: function() {
+            return this.map.getState();
+        },
+        applyState: function(state) {
+            this.map.applyState(state);
+        }
     }, options);
     this.mapPanel = new GeoExt.MapPanel(options);
 };
