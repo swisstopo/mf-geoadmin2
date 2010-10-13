@@ -26,7 +26,7 @@ window.onload = function() {
 
     OpenLayers.Lang.setCode(parameters.lang);
     OpenLayers.Number.thousandsSeparator = ' ';
-    OpenLayers.IMAGE_RELOAD_ATTEMPTS = 5;
+    OpenLayers.IMAGE_RELOAD_ATTEMPTS = 0;
 
     /*
      * Setting of Ext global vars.
