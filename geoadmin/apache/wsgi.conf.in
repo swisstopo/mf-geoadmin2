@@ -12,4 +12,6 @@ RewriteRule ^/${vars:instanceid}/wsgi/[0-9a-fA-F]*/(app|build|lib)/(.*)$  ${buil
     Header unset Etag
 </LocationMatch>
 
+# avoid 404 error if the trailing slash is missing.
+RedirectMatch ^/${vars:instanceid}/wsgi$ /${vars:instanceid}/wsgi/
 WSGIScriptAlias /${vars:instanceid}/wsgi ${buildout:directory/buildout/parts/modwsgi/wsgi}
