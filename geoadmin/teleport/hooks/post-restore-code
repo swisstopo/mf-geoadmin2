@@ -15,6 +15,8 @@ cd $CODE_DIR
 
 if [ -f buildout_$TARGET.cfg ]; then
     buildout/bin/buildout -c buildout_$TARGET.cfg
+elif [ -f buildout_main.cfg ]; then
+    buildout/bin/buildout -c buildout_main.cfg
 else
     buildout/bin/buildout
 fi
