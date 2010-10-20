@@ -12,25 +12,6 @@ Ext.namespace('App');
  */
 App.Print = function(mapPanel, options) {
 
-    // Private
-
-    /**
-     * PrintProvider event listener.
-     * see: http://geoext.org/lib/GeoExt/data/PrintProvider.html#events
-     */
-    var printEvents = {
-        "beforeprint": function(provider, map, pages, options) {
-            var overrides = {
-                dataOwner: map.attribution()
-            };
-            overrides['lang' + OpenLayers.Lang.getCode()] = true;
-
-            Ext.applyIf(pages[0].customParams, overrides);
-        }
-    };
-
-    // Public
-
     Ext.apply(this, {
         printAction: null
     });
@@ -39,6 +20,7 @@ App.Print = function(mapPanel, options) {
         printPanelOptions: {
             mapPanel: mapPanel
         },
+        printBaseUrl: 'print/pdf/',
 //         windowOptions: {
 //             listeners: {
 //                 "hide": function(w) {
