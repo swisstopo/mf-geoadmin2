@@ -12,5 +12,5 @@ RewriteRule ^/${vars:instanceid}/wsgi/[0-9a-fA-F]*/(app|build|lib)/(.*)$  ${buil
     Header unset Etag
 </LocationMatch>
 
-RedirectMatch ^${vars:apache-entry-point}$ /${vars:instanceid}/wsgi/ [PT]
+RewriteRule ^${vars:apache-entry-point}$ /${vars:instanceid}/wsgi/ [PT]
 WSGIScriptAlias /${vars:instanceid}/wsgi ${buildout:directory/buildout/parts/modwsgi/wsgi}
