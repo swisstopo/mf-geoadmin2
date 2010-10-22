@@ -32,7 +32,7 @@ App.Map = function(options) {
     // Main
     map = new GeoAdmin.Map();
     map.switchComplementaryLayer("ch.swisstopo.pixelkarte-farbe", {
-        opacity: 100
+        opacity: 1.0
     });
 
     map.addControls([new GeoAdmin.Tooltip({
