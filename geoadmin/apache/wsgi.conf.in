@@ -1,5 +1,5 @@
-RewriteEngine On
-ExpiresActive On
+RewriteEngine on
+ExpiresActive on
 
 # Static files with normal cache:
 RewriteRule ^/${vars:instanceid}/wsgi/(app|build|lib)/(.*)$  ${buildout:directory/geoadmin/public/$1/$2}
