@@ -68,10 +68,12 @@ App.Tools = function(map) {
      * {Array} An array of toolbar items.
      */
     var getBbarItems = function(map) {
+        var c_href = "http://www.geo.admin.ch/internet/geoportal/" + OpenLayers.Lang.getCode() + "/home/geoadmin/contact.html#copyright";
+        var c_text = OpenLayers.i18n('Copyright &amp; Data protection');
         return [new GeoAdmin.MousePositionBox({map: this.map}), '->',
-                {xtype: 'tbtext', text: '<a href="http://www.geo.admin.ch/">geo.admin.ch</a>'},
+                {xtype: 'tbtext', text: '<a target="_blank" href="http://www.geo.admin.ch/">geo.admin.ch</a>'},
                 {xtype: 'tbtext', text: '&nbsp;', cls: 'pipe'}, 
-                {xtype: 'tbtext', text: '<a href="http://www.geo.admin.ch/">geo.admin.ch</a>'}]
+                {xtype: 'tbtext', text: '<a target="_blank" href="' + c_href + '">' + c_text + '</a>'}]
     };
 
     // Public
