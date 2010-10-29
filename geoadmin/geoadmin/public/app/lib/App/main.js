@@ -65,6 +65,10 @@ window.onload = function() {
                 id: 'side-panel',
                 animCollapse: false,
                 width: 300,
+                layout: 'vbox',
+                layoutConfig: {
+                    align : 'stretch'
+                },
                 border: false,
                 tbar: ['->', {
                     id: 'side-panel-collapse',
@@ -84,6 +88,7 @@ window.onload = function() {
                     map: mapPanel.map
                 }), {
                     xtype: 'tabpanel',
+                    flex: 1,
                     plain: true,
                     baseCls: 'side-panel-tab',
                     tabMargin: 0,
@@ -91,7 +96,6 @@ window.onload = function() {
                     items: [{
                         title: OpenLayers.i18n('Catalog'),
                         autoScroll: true,
-                        autoHeight: true,
                         items: [{
                             xtype: 'ga_catalogtree',
                             map: mapPanel.map
@@ -99,7 +103,6 @@ window.onload = function() {
                     }, {
                         title: OpenLayers.i18n('Search'),
                         bodyStyle: 'padding: 3px;',
-                        autoHeight: true,
                         layout: 'anchor',
                         items: [{
                             xtype: 'ga_bodsearchcombo',
