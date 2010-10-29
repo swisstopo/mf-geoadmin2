@@ -1,5 +1,4 @@
 /*
- * @requires Permalink/lib/Permalink.js
  * @requires GeoExt/data/ScaleStore.js
  * @requires BaseLayerTool/lib/BaseLayerTool.js
  * @requires MousePosition/lib/MousePositionBox.js
@@ -17,7 +16,7 @@ Ext.namespace('App');
  * Parameters:
  * map - {OpenLayers.Map} The map object.
  */
-App.Tools = function(map) {
+App.Tools = function(map, permalink) {
 
     // Private
 
@@ -43,13 +42,20 @@ App.Tools = function(map) {
                 Ext.getCmp('side-panel-collapse').show();
             }
         };
-        var link = new GeoAdmin.Permalink({
+
+        var link = new Ext.Button({
             text: 'link', 
             iconAlign: 'right', 
             iconCls: 'link', 
-//          cls: 'x-btn-no-over',
-            enableToggle: true
+            enableToggle: true,
+            toggleHandler: function(btn, state) {
+                permalink.setVisible(state);
+            }
         });
+        permalink.on('hide', function(p) {
+            this.toggle(false, true /* supressEvent */);
+        }, link);
+
         return [expand, 
                 new GeoAdmin.BaseLayerTool({map: map, slider: {width: 100}}),
                 new GeoAdmin.NavigationHistory({defaults: {cls: 'x-btn-no-over'}, map: map}),

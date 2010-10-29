@@ -3,6 +3,7 @@
  * @include GeoExt/widgets/MapPanel.js
  * @include App/Tools.js
  * @include Features/lib/Tooltip.js
+ * @include Permalink/lib/Permalink.js
  */
 
 Ext.namespace('App');
@@ -40,7 +41,10 @@ App.Map = function(options) {
         autoActivate: true
     })]);
 
-    var toolbar = new App.Tools(map);
+    var permalink = new GeoAdmin.PermalinkPanel({
+        hidden: true
+    });
+    var toolbar = new App.Tools(map, permalink);
     options = Ext.apply({
         map: map,
         tbar: {
@@ -51,6 +55,7 @@ App.Map = function(options) {
         },
         stateId: "map",
         prettyStateKeys: true,
+        items: [permalink],
         getState: function() {
             return this.map.getState();
         },
