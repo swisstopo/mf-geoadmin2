@@ -89,24 +89,24 @@ window.onload = function() {
                     tabMargin: 0,
                     activeTab: 0,
                     items: [{
-                                title: OpenLayers.i18n('Catalog'),
-                                autoScroll: true,
-                                autoHeight: true,
-                                items: [{
-                                    xtype: 'ga_catalogtree',
-                                    map: mapPanel.map    
-                                }]
-                            }, {
-                                title: OpenLayers.i18n('Search'),
-                                bodyStyle: 'padding: 3px;',
-                                autoHeight: true,
-                                layout: 'anchor',
-                                items: [{
-                                    xtype: 'ga_bodsearchcombo',
-                                    anchor: '100%',
-                                    map: mapPanel.map
-                                }]
-                          }]
+                        title: OpenLayers.i18n('Catalog'),
+                        autoScroll: true,
+                        autoHeight: true,
+                        items: [{
+                            xtype: 'ga_catalogtree',
+                            map: mapPanel.map
+                        }]
+                    }, {
+                        title: OpenLayers.i18n('Search'),
+                        bodyStyle: 'padding: 3px;',
+                        autoHeight: true,
+                        layout: 'anchor',
+                        items: [{
+                            xtype: 'ga_bodsearchcombo',
+                            anchor: '100%',
+                            map: mapPanel.map
+                        }]
+                    }]
                 }]
             }
         ]
