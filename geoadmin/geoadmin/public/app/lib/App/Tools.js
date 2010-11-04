@@ -31,18 +31,6 @@ App.Tools = function(map, permalink) {
      * {Array} An array of toolbar items.
      */
     var getTbarItems = function(map) {
-        var expand = {
-            id: 'side-panel-expand',
-            iconCls: 'expand',
-            cls: 'x-btn-no-over',
-            hidden: true,
-            handler: function(b) {
-                Ext.getCmp('side-panel').expand();
-                b.hide();
-                Ext.getCmp('side-panel-collapse').show();
-            }
-        };
-
         var link = new Ext.Button({
             text: 'link', 
             iconAlign: 'right', 
@@ -56,8 +44,7 @@ App.Tools = function(map, permalink) {
             this.toggle(false, true /* supressEvent */);
         }, link);
 
-        return [expand, 
-                new GeoAdmin.BaseLayerTool({map: map, slider: {width: 100}}),
+        return [new GeoAdmin.BaseLayerTool({map: map, slider: {width: 100}}),
                 new GeoAdmin.NavigationHistory({defaults: {cls: 'x-btn-no-over'}, map: map}),
                 new GeoAdmin.SwissSearchComboBox({map: map, width: 200}),
                 '->', link];

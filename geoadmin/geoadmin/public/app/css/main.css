@@ -1,4 +1,4 @@
-html, body { 
+html, body {
   font-family: tahoma, arial, verdana, sans-serif;
 }
 
@@ -98,19 +98,13 @@ a:link, a:active, a:visited {
 .x-btn button {
     color: black;
 }
-.x-toolbar .link, .x-toolbar .print {
+
+.x-toolbar .collapse, .x-toolbar .link, .x-toolbar .print {
     font-weight: bold;
 }
 
-.x-toolbar .expand, .x-toolbar .collapse {
-    background-image: url(../images/tb_toggle_button.png);
-}
-
-.x-toolbar .expand {
-    background-position: -16px 0;
-}
 .x-toolbar .collapse {
-    background-position: 0 0;
+    background-image: url(../images/tb_fullscreen_logo.png);
 }
 
 .x-toolbar .link {

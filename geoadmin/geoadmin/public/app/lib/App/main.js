@@ -69,15 +69,15 @@ window.onload = function() {
                     align : 'stretch'
                 },
                 border: false,
-                tbar: ['->', {
+                tbar: [{
                     id: 'side-panel-collapse',
                     cls: 'x-btn-no-over',
                     iconCls: 'collapse',
-                    tooltip: 'fixme',
+                    iconAlign: "right",
+                    text: "Enlarge map",
                     handler: function(b) {
                         Ext.getCmp('side-panel').collapse();
                         b.hide();
-                        Ext.getCmp('side-panel-expand').show();
                     }
                 }],
                 defaults: {
