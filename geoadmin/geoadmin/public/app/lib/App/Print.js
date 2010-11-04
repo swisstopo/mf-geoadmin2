@@ -20,14 +20,7 @@ App.Print = function(mapPanel, options) {
         printPanelOptions: {
             mapPanel: mapPanel
         },
-        printBaseUrl: 'print/pdf/',
-//         windowOptions: {
-//             listeners: {
-//                 "hide": function(w) {
-//                     this.printAction.toggle();
-//                 }.createDelegate(this)
-//             }
-//         },
+        printBaseUrl: GeoAdmin.printBaseUrl || 'print/pdf/',
         iconAlign: 'right',
         iconCls: 'print',
         enableToggle: true
