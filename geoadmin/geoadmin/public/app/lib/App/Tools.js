@@ -36,6 +36,7 @@ App.Tools = function(map, permalink) {
             iconAlign: 'right', 
             iconCls: 'link', 
             enableToggle: true,
+            toggleGroup: 'tools',
             toggleHandler: function(btn, state) {
                 permalink.setVisible(state);
             }

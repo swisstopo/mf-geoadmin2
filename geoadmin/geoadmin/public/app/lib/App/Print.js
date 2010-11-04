@@ -18,8 +18,10 @@ App.Print = function(mapPanel, options) {
 
     this.printAction = new GeoAdmin.Print({
         printPanelOptions: {
-            mapPanel: mapPanel
+            mapPanel: mapPanel,
+            renderTo: "print-panel"
         },
+        toggleGroup: 'tools',
         printBaseUrl: GeoAdmin.printBaseUrl || 'print/pdf/',
         iconAlign: 'right',
         iconCls: 'print',
