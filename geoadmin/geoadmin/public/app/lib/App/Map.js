@@ -45,6 +45,7 @@ App.Map = function(options) {
         hidden: true
     });
     var toolbar = new App.Tools(map, permalink);
+
     options = Ext.apply({
         map: map,
         tbar: {
@@ -53,15 +54,7 @@ App.Map = function(options) {
         bbar: {
             items: toolbar.bbar
         },
-        stateId: "map",
-        prettyStateKeys: true,
-        items: [permalink],
-        getState: function() {
-            return this.map.getState();
-        },
-        applyState: function(state) {
-            this.map.applyState(state);
-        }
+        items: [permalink]
     }, options);
-    this.mapPanel = new GeoExt.MapPanel(options);
+    this.mapPanel = new GeoAdmin.MapPanel(options);
 };
