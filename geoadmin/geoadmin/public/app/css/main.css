@@ -53,6 +53,7 @@ a:link, a:active, a:visited {
   line-height: 20px;
   background-color: #ccc;
   border-top: 1px solid white;
+  border-bottom: 1px solid black;
   padding-right: 5px;
   padding-left: 2px;
 }
@@ -65,9 +66,6 @@ a:link, a:active, a:visited {
 .x-panel-noborder .x-panel-tbar-noborder .x-toolbar,
 .x-panel-noborder .x-panel-bbar-noborder .x-toolbar {
   border: 0;
-}
-.x-panel-noborder .x-panel-tbar-noborder .x-toolbar {
-  border-top: 1px solid black;
 }
 
 .x-panel-noborder .x-panel-header-noborder {
