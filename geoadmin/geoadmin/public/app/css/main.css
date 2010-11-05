@@ -54,6 +54,7 @@ a:link, a:active, a:visited {
   background-color: #ccc;
   border-top: 1px solid white;
   padding-right: 5px;
+  padding-left: 2px;
 }
 
 .x-toolbar {
@@ -118,15 +119,16 @@ a:link, a:active, a:visited {
 
 #expand-collapse-side-panel {
     height: 100%;
-    width: 18px;
+    width: 14px;
     cursor: pointer;
+    margin-right: 2px;
 }
 .side-panel-expanded, .side-panel-collapsed {
     background-image: url(../images/tb_toggle_button.png);
     background-repeat: no-repeat;
 }
 .side-panel-expanded {
-    background-position: -18px bottom;
+    background-position: -14px bottom;
 }
 .side-panel-collapsed {
     background-position: 0 bottom;
