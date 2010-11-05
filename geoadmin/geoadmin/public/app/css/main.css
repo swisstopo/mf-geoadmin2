@@ -53,7 +53,6 @@ a:link, a:active, a:visited {
   line-height: 20px;
   background-color: #ccc;
   border-top: 1px solid white;
-  padding-left: 5px;
   padding-right: 5px;
 }
 
@@ -117,19 +116,29 @@ a:link, a:active, a:visited {
     padding-right: 25px;
 }
 
+#expand-collapse-side-panel {
+    height: 100%;
+    width: 18px;
+    cursor: pointer;
+}
+.side-panel-expanded, .side-panel-collapsed {
+    background-image: url(../images/tb_toggle_button.png);
+    background-repeat: no-repeat;
+}
+.side-panel-expanded {
+    background-position: 0 bottom;
+}
+.side-panel-collapsed {
+    background-position: -18px bottom;
+}
+
 #side-panel-xcollapsed {
     display: none !important;
 }
 
-.x-toolbar .x-btn-no-over .x-btn-tl,
-.x-toolbar .x-btn-no-over .x-btn-tc,
-.x-toolbar .x-btn-no-over .x-btn-tr,
-.x-toolbar .x-btn-no-over .x-btn-ml,
-.x-toolbar .x-btn-no-over .x-btn-mc,
-.x-toolbar .x-btn-no-over .x-btn-mr,
-.x-toolbar .x-btn-no-over .x-btn-bl,
-.x-toolbar .x-btn-no-over .x-btn-bc,
-.x-toolbar .x-btn-no-over .x-btn-br {
+.x-btn-no-over .x-btn-tl, .x-btn-no-over .x-btn-tc, .x-btn-no-over .x-btn-tr,
+.x-btn-no-over .x-btn-ml, .x-btn-no-over .x-btn-mc, .x-btn-no-over .x-btn-mr,
+.x-btn-no-over .x-btn-bl, .x-btn-no-over .x-btn-bc, .x-btn-no-over .x-btn-br {
     background-image: none;
 }
 

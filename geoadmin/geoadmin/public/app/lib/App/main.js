@@ -53,6 +53,19 @@ window.onload = function() {
 
     mapPanel.getTopToolbar().add(printAction);
 
+    
+    Ext.get('expand-collapse-side-panel').on('click', function(evt, el) {
+        var p = Ext.getCmp('side-panel');
+        el = Ext.get(el);
+        if (p.collapsed) {
+            p.expand();
+            el.replaceClass('side-panel-collapsed', 'side-panel-expanded');
+        } else {
+            p.collapse();
+            el.replaceClass('side-panel-expanded', 'side-panel-collapsed');
+        }
+    });
+
     // the viewport
     new Ext.Viewport({
         layout: "border",
