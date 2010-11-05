@@ -44,10 +44,11 @@ App.Map = function(options) {
     var permalink = new GeoAdmin.PermalinkPanel({
         hidden: true
     });
-	var print = new Ext.Panel({
+    var print = new Ext.Panel({
         cls: "print-panel",
         id: "print-panel"
-	});
+    });
+    print.hide();
     var toolbar = new App.Tools(map, permalink);
 
     options = Ext.apply({

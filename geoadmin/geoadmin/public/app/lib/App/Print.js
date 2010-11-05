@@ -19,7 +19,16 @@ App.Print = function(mapPanel, options) {
     this.printAction = new GeoAdmin.Print({
         printPanelOptions: {
             mapPanel: mapPanel,
-            renderTo: "print-panel"
+            renderTo: "print-panel",
+            title: OpenLayers.i18n("Print"),
+            tbar: ["->", {
+                iconCls: "close-button",
+                handler: function() {
+                    this.printAction.printPanel.container.setVisible(false);
+                    this.printAction.printPanel.hideExtent();
+                },
+                scope: this
+            }]
         },
         toggleGroup: 'tools',
         printBaseUrl: GeoAdmin.printBaseUrl || 'print/pdf/',
