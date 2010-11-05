@@ -126,10 +126,10 @@ a:link, a:active, a:visited {
     background-repeat: no-repeat;
 }
 .side-panel-expanded {
-    background-position: 0 bottom;
+    background-position: -18px bottom;
 }
 .side-panel-collapsed {
-    background-position: -18px bottom;
+    background-position: 0 bottom;
 }
 
 #side-panel-xcollapsed {

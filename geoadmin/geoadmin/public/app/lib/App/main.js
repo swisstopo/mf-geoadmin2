@@ -90,7 +90,9 @@ window.onload = function() {
                     text: "Enlarge map",
                     handler: function(b) {
                         Ext.getCmp('side-panel').collapse();
-                        b.hide();
+
+                        var el = Ext.get('expand-collapse-side-panel');
+                        el.replaceClass('side-panel-expanded', 'side-panel-collapsed');
                     }
                 }],
                 defaults: {
