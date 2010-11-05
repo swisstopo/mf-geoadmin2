@@ -86,7 +86,7 @@ window.onload = function() {
                     cls: 'x-btn-no-over',
                     iconCls: 'collapse',
                     iconAlign: "right",
-                    text: "Enlarge map",
+                    text: OpenLayers.i18n('Full map'),
                     handler: function(b) {
                         Ext.getCmp('side-panel').collapse();
 
