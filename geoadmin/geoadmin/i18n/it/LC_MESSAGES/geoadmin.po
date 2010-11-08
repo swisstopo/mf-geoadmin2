@@ -17,31 +17,75 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.5\n"
 
-#: geoadmin/templates/index.header.html:3
 msgid "Federal Administration admin.ch"
 msgstr "Amministrazione federale admin.ch"
 
-#: geoadmin/templates/index.header.html:23
 msgid "Homepage"
 msgstr "Pagina iniziale"
 
-#: geoadmin/templates/index.header.html:25
 msgid "Help"
 msgstr "Aiuto"
 
-#: geoadmin/templates/index.header.html:27
 msgid "RSS"
 msgstr ""
 
-#: geoadmin/templates/index.header.html:29
 msgid "Twitter"
 msgstr ""
 
-#: geoadmin/templates/index.header.html:31
 msgid "Contact"
 msgstr "Contatto"
 
-#: geoadmin/templates/index.html:6
 msgid "map.geo.admin.ch"
 msgstr ""
+
+msgid "app title"
+msgstr "map.geo.admin.ch"
+
+msgid "help title"
+msgstr "Aiuto"
+
+msgid "help url"
+msgstr "http://www.geo.admin.ch/internet/geoportal/it/commons/help/viewer_help.html"
+
+msgid "contact title"
+msgstr "Contatto"
+
+msgid "contact url"
+msgstr "http://www.geo.admin.ch/internet/geoportal/it/tools/contact.html"
+
+msgid "disclaimer title"
+msgstr "Copyright e  dicariazione della protezione dei diritti d’autore"
+
+msgid "disclaimer url"
+msgstr "http://www.geo.admin.ch/internet/geoportal/it/home/geoadmin/contact.html#copyright"
+
+msgid "federal administration"
+msgstr "Amministrazione federale admin.ch"
+
+msgid "home url"
+msgstr "http://map.geo.admin.ch/?lang=it"
+
+msgid "home title"
+msgstr "Pagina iniziale"
+
+msgid "blind warning"
+msgstr "Questa pagina Web è una  applicazione geografica, purtroppo non è ottimizata per le persone videolese."
+
+msgid "page is loading. please wait..."
+msgstr "map.geo.admin.ch viene caricata"
+
+msgid "hide column"
+msgstr "Chiudere la barra dei temi"
+
+msgid "rss url"
+msgstr "http://www.geo.admin.ch/internet/geoportal/it/home/current.enhRSS.html"
+
+msgid "rss title"
+msgstr "RSS"
+
+msgid "twitter url"
+msgstr "http://www.twitter.com/swiss_geoportal"
+
+msgid "twitter title"
+msgstr "Twitter"
 
