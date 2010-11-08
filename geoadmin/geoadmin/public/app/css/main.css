@@ -162,3 +162,17 @@ a:link, a:active, a:visited {
 .side-panel-tab .x-tab-strip-top .x-tab-strip-active .x-tab-right {
     margin-bottom: auto;
 }
+
+.webBlindThis {
+    position: absolute;
+    left: -999px;
+    top: -999px;
+    width: 0;
+    height: 0;
+    font-size: 0;
+    line-height: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: inline;
+}
