@@ -53,9 +53,9 @@ App.Map = function(options) {
     });
     var print = new Ext.Panel({
         cls: "print-panel",
-        id: "print-panel"
+        id: "print-panel",
+        style: "visibility: hidden; "
     });
-    print.hide();
     var toolbar = new App.Tools(map, permalink);
 
     options = Ext.apply({

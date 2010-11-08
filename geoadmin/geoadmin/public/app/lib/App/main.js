@@ -50,7 +50,6 @@ window.onload = function() {
     };
 
     var printAction = new App.Print(mapPanel).printAction;
-
     mapPanel.getTopToolbar().add(printAction);
     
     Ext.get('expand-collapse-side-panel').on('click', function(evt, el) {
