@@ -13,6 +13,9 @@ class EntryController(BaseController):
     def index(self):
         c.debug = "debug" in request.params
         c.lang = str(request.params.get("lang", config.get("default_lang")))
-        set_lang(c.lang, fallback=True)
+        if c.lang == 'rm':
+           set_lang('fi', fallback=True)
+        else:
+           set_lang(c.lang, fallback=True)
 
         return render("index.html")

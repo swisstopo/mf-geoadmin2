@@ -1,0 +1,47 @@
+# Finnish translations for geoadmin.
+# Copyright (C) 2010 ORGANIZATION
+# This file is distributed under the same license as the geoadmin project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: geoadmin 0.1\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2010-10-01 10:27+0200\n"
+"PO-Revision-Date: 2010-11-08 09:05+0100\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: fi <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 0.9.5\n"
+
+#: geoadmin/templates/index.header.html:3
+msgid "Federal Administration admin.ch"
+msgstr "Administraziun federala admin.ch"
+
+#: geoadmin/templates/index.header.html:23
+msgid "Homepage"
+msgstr "Pagina iniziala"
+
+#: geoadmin/templates/index.header.html:25
+msgid "Help"
+msgstr "Agid"
+
+#: geoadmin/templates/index.header.html:27
+msgid "RSS"
+msgstr "RSS"
+
+#: geoadmin/templates/index.header.html:29
+msgid "Twitter"
+msgstr "Twitter"
+
+#: geoadmin/templates/index.header.html:31
+msgid "Contact"
+msgstr "Contact"
+
+#: geoadmin/templates/index.html:6
+msgid "map.geo.admin.ch"
+msgstr "map.geo.admin.ch"
+
