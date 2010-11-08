@@ -54,7 +54,7 @@ msgid "contact url"
 msgstr "http://www.geo.admin.ch/internet/geoportal/it/tools/contact.html"
 
 msgid "disclaimer title"
-msgstr "Copyright e  dicariazione della protezione dei diritti d’autore"
+msgstr "Copyright e  dicariazione della protezione dei diritti dâ€™autore"
 
 msgid "disclaimer url"
 msgstr "http://www.geo.admin.ch/internet/geoportal/it/home/geoadmin/contact.html#copyright"
@@ -69,7 +69,7 @@ msgid "home title"
 msgstr "Pagina iniziale"
 
 msgid "blind warning"
-msgstr "Questa pagina Web è una  applicazione geografica, purtroppo non è ottimizata per le persone videolese."
+msgstr "Questa pagina Web Ã¨ una  applicazione geografica, purtroppo non Ã¨ ottimizata per le persone videolese."
 
 msgid "page is loading. please wait..."
 msgstr "map.geo.admin.ch viene caricata"

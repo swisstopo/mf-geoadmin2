@@ -69,10 +69,10 @@ msgid "home title"
 msgstr "Pagina iniziala"
 
 msgid "blind warning"
-msgstr "Questa pagina d'internet Ë in'applicaziun cartografica e n'Ë pervia da quai betg optimada per persunas tschorvas."
+msgstr "Questa pagina d'internet √® in'applicaziun cartografica e n'√® pervia da quai betg optimada per persunas tschorvas."
 
 msgid "page is loading. please wait..."
-msgstr "map.geo.admin.ch vegn chargi‡."
+msgstr "map.geo.admin.ch vegn chargi√†."
 
 msgid "hide column"
 msgstr "Zuppentar ils temas"

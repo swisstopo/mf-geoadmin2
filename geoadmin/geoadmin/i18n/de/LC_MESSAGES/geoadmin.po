@@ -54,7 +54,7 @@ msgid "contact url"
 msgstr "http://www.geo.admin.ch/internet/geoportal/de/tools/contact.html"
 
 msgid "disclaimer title"
-msgstr "Copyright & Datenschutzerklärung"
+msgstr "Copyright & DatenschutzerklÃ¤rung"
 
 msgid "disclaimer url"
 msgstr "http://www.geo.admin.ch/internet/geoportal/de/home/geoadmin/contact.html#copyright"
@@ -69,7 +69,7 @@ msgid "home title"
 msgstr "Startseite"
 
 msgid "blind warning"
-msgstr "Diese Webpage ist eine geographische Anwendung, und ist leider nicht für Blinde optimiert."
+msgstr "Diese Webpage ist eine geographische Anwendung, und ist leider nicht fÃ¼r Blinde optimiert."
 
 msgid "page is loading. please wait..."
 msgstr "map.geo.admin.ch wird geladen."
