@@ -4,6 +4,7 @@
  * @include App/Tools.js
  * @include Features/lib/Tooltip.js
  * @include Permalink/lib/Permalink.js
+ * @include ContextPopup/lib/ContextPopup.js
  */
 
 Ext.namespace('App');
@@ -36,10 +37,16 @@ App.Map = function(options) {
         opacity: 1.0
     });
 
-    map.addControls([new GeoAdmin.Tooltip({
-        layer: map.vector,
-        autoActivate: true
-    })]);
+    map.addControls([
+        new GeoAdmin.Tooltip({
+            layer: map.vector,
+            autoActivate: true
+        }),
+        new GeoAdmin.ContextPopup({
+            handleRightClicks: true,
+            map: map
+        })
+    ]);
 
     var permalink = new GeoAdmin.PermalinkPanel({
         hidden: true
