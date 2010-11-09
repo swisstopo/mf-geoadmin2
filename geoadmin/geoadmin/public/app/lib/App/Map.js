@@ -36,7 +36,7 @@ App.Map = function(options) {
     map.switchComplementaryLayer("ch.swisstopo.pixelkarte-farbe", {
         opacity: 1.0
     });
-
+    map.overviewMapCtrl.maximizeControl();
     map.addControls([
         new GeoAdmin.Tooltip({
             layer: map.vector,
