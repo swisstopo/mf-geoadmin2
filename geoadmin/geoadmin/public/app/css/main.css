@@ -50,7 +50,7 @@ a:link, a:active, a:visited {
 
 .navServiceBackground {
   height: 20px;
-  line-height: 20px;
+  line-height: 18px;
   background-color: #ccc;
   border-top: 1px solid white;
   border-bottom: 1px solid black;
@@ -59,6 +59,8 @@ a:link, a:active, a:visited {
   font-size:0.75em;
   letter-spacing:0;
 }
+
+
 
 .x-toolbar {
   background-image: none;
@@ -123,6 +125,15 @@ a:link, a:active, a:visited {
     cursor: pointer;
     margin-right: 2px;
 }
+
+.ext-ie .side-panel-expanded {
+    margin-top: 6px !important;
+}
+
+.ext-ie .side-panel-collapsed {
+    margin-top: 6px !important;
+}
+
 .side-panel-expanded, .side-panel-collapsed {
     background-image: url(../images/tb_toggle_button.png);
     background-repeat: no-repeat;
