@@ -1,6 +1,10 @@
 RewriteEngine on
 ExpiresActive on
 
+AddOutputFilterByType DEFLATE text/css
+AddOutputFilterByType DEFLATE application/x-javascript application/javascript application/json
+AddOutputFilterByType DEFLATE text/html text/plain text/xml
+
 # Static files with normal cache:
 RewriteRule ^/${vars:instanceid}/wsgi/(app|build|lib)/(.*)$  ${buildout:directory/geoadmin/public/$1/$2}
 
