@@ -3,8 +3,9 @@
  */
 
 OpenLayers.Util.extend(OpenLayers.Lang.en, {
+    'Copyright &amp; Data protection': 'Copyright &amp; Data protection',
+
     "layertree": "Layer tree",
-    "print": "Printing",
     "close": "Close",
 
     "Print.titlefieldlabel": "Title",

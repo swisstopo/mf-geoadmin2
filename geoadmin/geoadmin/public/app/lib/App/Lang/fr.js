@@ -3,6 +3,8 @@
  */
 
 OpenLayers.Util.extend(OpenLayers.Lang.fr, {
+    'Copyright &amp; Data protection': 'Conditions d\'utilisation',
+
     "layertree": "Arbre des couches",
     "print": "Impression",
     "close": "Fermer",
