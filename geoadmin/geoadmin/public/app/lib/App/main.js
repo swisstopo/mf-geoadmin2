@@ -23,7 +23,7 @@ window.onload = function() {
 
     var parameters = OpenLayers.Util.getParameters();
 
-    OpenLayers.Lang.setCode(parameters.lang);
+    OpenLayers.Lang.setCode(parameters.lang || "de");
     OpenLayers.Number.thousandsSeparator = ' ';
     OpenLayers.IMAGE_RELOAD_ATTEMPTS = 0;
 
