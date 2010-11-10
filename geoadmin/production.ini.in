@@ -16,7 +16,7 @@ full_stack = true
 static_files = false
 version = ${app-version}
 
-cache_dir = /tmp/geoadmin-${instanceid}_beaker_data
+cache_dir = /tmp/geoadmin-${instanceid}_prod_beaker_data
 
 # If you'd like to fine-tune the individual locations of the cache data dirs
 # for the Cache data, un-comment the desired settings

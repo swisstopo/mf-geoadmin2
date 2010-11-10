@@ -19,6 +19,7 @@ port = 5000
 use = config:production.ini
 static_files = true
 set debug = true
+cache_dir = /tmp/geoadmin-${instanceid}_dev_beaker_data
 
 version =  # keep this empty !
 
