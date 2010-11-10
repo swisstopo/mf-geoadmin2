@@ -38,7 +38,7 @@ Getting Started
 
   buildout/bin/buildout -c buildout_myconfig.cfg
 
-6) Finally dont't forget to restart apache:
+6) Finally don't forget to restart apache:
 
   sudo apache2ctl graceful
 
