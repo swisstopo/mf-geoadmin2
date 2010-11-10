@@ -34,8 +34,15 @@ Getting Started
 
 4) Edit the .po files in geoadmin/i18n/*/LC_MESSAGES/geoadmin.po
 
-5) Finally, compile the .po file to a .mo file:
+5) Run buildout to compile all the .po files to .mo:
 
-  buildout/bin/python setup.py compile_catalog
+  buildout/bin/buildout -c buildout_myconfig.cfg
+
+6) Finally dont't forget to restart apache:
+
+  sudo apache2ctl graceful
+
+When you add a new messagge repeat steps 2, 4 to translate, 5 and 6 to export.
 
 Source: http://wiki.pylonshq.com/display/pylonsdocs/Internationalization+and+Localization
+
