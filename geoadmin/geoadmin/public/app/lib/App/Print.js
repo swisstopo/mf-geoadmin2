@@ -31,6 +31,7 @@ App.Print = function(mapPanel, options) {
             }]
         },
         toggleGroup: 'tools',
+        cls: 'x-btn-no-over',
         printBaseUrl: GeoAdmin.printBaseUrl || 'print/pdf/',
         iconAlign: 'right',
         iconCls: 'print',

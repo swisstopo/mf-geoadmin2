@@ -33,6 +33,7 @@ App.Tools = function(map, permalink) {
     var getTbarItems = function(map) {
         var link = new Ext.Button({
             text: OpenLayers.i18n('permalink action'), 
+            cls: 'x-btn-no-over',
             iconAlign: 'right', 
             iconCls: 'link', 
             enableToggle: true,
