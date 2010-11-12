@@ -92,6 +92,7 @@ a:link, a:active, a:visited {
 .x-tab-strip span.x-tab-strip-text {
     color: white;
     text-align: center;
+    font-weight: bold;
 }
 
 .x-tab-strip-top .x-tab-strip-active .x-tab-right span.x-tab-strip-text,
