@@ -1,5 +1,5 @@
 html, body {
-  font-family: tahoma, arial, verdana, sans-serif;
+  font-family: arial, helvetica, verdana, sans-serif;;
 }
 
 a:link, a:active, a:visited {
@@ -19,12 +19,15 @@ a:link, a:active, a:visited {
 #header a {
   color: black;
   text-decoration: none;
-  font-size: 11px;
+  font-size: 0.9em;
   vertical-align: middle;
 }
 
 #webServiceContentDiv a {
   color: #333;
+}
+#webServiceContentDiv {
+  padding-top: 1px;
 }
 
 .inline-list {
@@ -104,6 +107,7 @@ a:link, a:active, a:visited {
 /*************************/
 .x-btn button {
     color: black;
+    font-size: 12px;
 }
 
 .x-toolbar .collapse, .x-toolbar .link, .x-toolbar .print {
