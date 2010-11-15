@@ -143,6 +143,14 @@ a:link, a:active, a:visited {
     margin-top: 6px !important;
 }
 
+.ext-ie div.navServiceBackground {
+    margin-top: -3px;
+}
+
+.ext-ie div.geoadmin-mappanel div.x-panel-tbar div.x-toolbar {
+    padding-bottom: 0;
+}
+
 .side-panel-expanded, .side-panel-collapsed {
     background-image: url(../images/tb_toggle_button.png);
     background-repeat: no-repeat;

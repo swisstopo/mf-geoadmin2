@@ -60,6 +60,7 @@ App.Map = function(options) {
 
     options = Ext.apply({
         map: map,
+        cls: "geoadmin-mappanel",
         tbar: {
             items: toolbar.tbar
         },
