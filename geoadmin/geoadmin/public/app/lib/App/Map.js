@@ -44,7 +44,8 @@ App.Map = function(options) {
         }),
         new GeoAdmin.ContextPopup({
             handleRightClicks: true,
-            map: map
+            map: map,
+            zoomWheelEnabled: false
         })
     ]);
 
