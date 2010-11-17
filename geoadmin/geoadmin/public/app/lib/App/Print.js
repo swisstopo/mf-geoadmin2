@@ -20,7 +20,7 @@ App.Print = function(mapPanel, options) {
         printPanelOptions: {
             mapPanel: mapPanel,
             renderTo: "print-panel",
-            title: OpenLayers.i18n("Print"),
+            title: OpenLayers.i18n("mf.print.print.title"),
             tbar: ["->", {
                 iconCls: "close-button",
                 handler: function() {
