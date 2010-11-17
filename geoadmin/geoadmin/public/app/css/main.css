@@ -53,6 +53,7 @@ a:link, a:active, a:visited {
   float: right;
   padding: 3px 20px;
   font-weight: bold;
+  font-size: 0.7em !important;
 }
 
 .navServiceBackground {
@@ -65,6 +66,10 @@ a:link, a:active, a:visited {
   padding-left: 2px;
   font-size:0.75em;
   letter-spacing:0;
+}
+
+.ext-ie .navServiceBackground {
+  line-height: 20px;
 }
 
 
@@ -136,11 +141,11 @@ a:link, a:active, a:visited {
 }
 
 .ext-ie .side-panel-expanded {
-    margin-top: 6px !important;
+    margin-top: 5px !important;
 }
 
 .ext-ie .side-panel-collapsed {
-    margin-top: 6px !important;
+    margin-top: 5px !important;
 }
 
 .ext-ie div.navServiceBackground {
