@@ -211,3 +211,15 @@ a:link, a:active, a:visited {
     overflow: hidden;
     display: inline;
 }
+
+.ext-ie .x-form-text, .ext-ie .x-form-file {
+   height:20px;
+   line-height:16px;
+   vertical-align:middle;
+   top: 0px !important;
+}
+.x-form-field-wrap {
+	height: 22px;
+}
+
+
