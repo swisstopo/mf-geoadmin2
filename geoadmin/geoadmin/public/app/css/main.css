@@ -218,6 +218,11 @@ a:link, a:active, a:visited {
    vertical-align:middle;
    top: 0px !important;
 }
+
+.ext-ie .print-panel .x-form-text, .ext-ie .print-panel .x-form-file {
+   height:23px;
+}
+
 .x-form-field-wrap {
 	height: 22px;
 }
