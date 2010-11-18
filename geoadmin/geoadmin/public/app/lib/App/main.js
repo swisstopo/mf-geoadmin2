@@ -13,7 +13,7 @@
  */
 
 Ext.ns("GeoAdmin");
-GeoAdmin.webServicesUrl = "http://mf-chsdi0t.bgdi.admin.ch/main/wsgi";
+GeoAdmin.webServicesUrl = "http://api.geo.admin.ch";
 
 window.onload = function() {
 
