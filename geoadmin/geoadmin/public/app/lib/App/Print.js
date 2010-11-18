@@ -26,6 +26,7 @@ App.Print = function(mapPanel, options) {
                 handler: function() {
                     this.printAction.printPanel.container.setVisible(false);
                     this.printAction.printPanel.hideExtent();
+                    this.printAction.printLayer.setVisibility(false);
                 },
                 scope: this
             }]
