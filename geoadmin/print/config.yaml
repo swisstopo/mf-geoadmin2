@@ -288,7 +288,7 @@ layouts:
             borderWidth: 0.5
           items:
               - !text
-                fontSize: 32
+                fontSize: 25
                 text: ' '
                 backgroundColor: white
         - !columns
