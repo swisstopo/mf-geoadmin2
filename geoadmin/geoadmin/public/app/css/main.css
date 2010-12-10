@@ -231,4 +231,8 @@ a:link, a:active, a:visited {
    border:1px solid #FFFFFF  !important;
 }
 
+.print-panel .x-panel-tbar {
+    height: 0px !important;
+}
+
 
