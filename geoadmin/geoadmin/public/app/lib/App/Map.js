@@ -1,5 +1,6 @@
 /*
  * @include Map/lib/Map.js
+ * @include Map/lib/MapPanel.js
  * @include GeoExt/widgets/MapPanel.js
  * @include App/Tools.js
  * @include Features/lib/Tooltip.js
