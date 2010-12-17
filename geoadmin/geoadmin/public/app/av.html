@@ -1,0 +1,89 @@
+<head>
+    <script type="text/javascript">
+        //Create a global api variable to simplify debugging
+        var api;
+
+        //init function is started when page onload event is triggered
+        function init() {
+
+            //Create a toolbar placed above the map panel
+            var toolbar = new Ext.Toolbar({});
+            var map = new GeoAdmin.Map("", {resolutions : [650,500,250,100,50,20,10,5,2.5,2,1.5,1,0.5,0.25,0.125, 0.0625]});
+
+
+            //Create an instance of the GeoAdmin API
+            api = new GeoAdmin.API({map:map});
+
+
+
+            //Create a GeoExt map panel placed in the mymap div
+            api.createMapPanel({
+                renderTo: "mymap",
+                height: 600
+                //Add the toolbar in the map panel
+                ,tbar: toolbar
+            });
+
+            api.setBgLayer("voidLayer",1);
+          
+            //Add a tool to search for Swissnames, Zip code, Cities and Cantons
+            var swissSearchCombo = api.createSwissSearchCombo({width: 180});
+            toolbar.add(swissSearchCombo);
+            toolbar.doLayout();
+
+            var avWmsLayer = new OpenLayers.Layer.WMS("AV Data", "http://geodata01.admin.ch/WMS?", {
+                layers: "av_wms",
+                format: "image/png"
+            }, {
+                displayInLayerSwitcher: false,
+                singleTile: true,
+                ratio: 1.1,
+                maxResolution: 1
+            });
+
+            var layer_options = {
+                projection: new OpenLayers.Projection('EPSG:21781'),
+                units: 'm',
+                serverResolutions: [4000,3750,3500,3250,3000,2750,2500,2250,2000,1750,1500,
+                    1250,1000,750,650,500,250,100,50,20,10,5,2.5,2,1.5,1,0.5],
+                format: "image/jpeg",
+                attribution: '',
+                transitionEffect: "resize",
+                buffer: 0,
+                displayInLayerSwitcher: false,
+                layerType: 'raster',
+                minResolution: 1.1,
+                isBaseLayer: false
+            };
+
+            var url = [
+                'http://tile5.bgdi.admin.ch/geoadmin/',
+                'http://tile6.bgdi.admin.ch/geoadmin/',
+                'http://tile7.bgdi.admin.ch/geoadmin/',
+                'http://tile8.bgdi.admin.ch/geoadmin/',
+                'http://tile9.bgdi.admin.ch/geoadmin/'
+            ];
+            var tilecacheLayer = new OpenLayers.Layer.TileCache('Pixel Map', url, 'ch.swisstopo.pixelkarte-farbe', layer_options);
+
+            var aggregateLayer = new OpenLayers.Layer.Aggregate('Aggregate PK / AV',
+                    [tilecacheLayer,avWmsLayer],
+            {
+                attribution: 'AV DATA',
+                displayInLayerSwitcher: true,
+                geoadmin_queryable: true,
+                geoadmin_isBgLayer: false,
+                layerType: 'mixed'
+            });
+
+            api.map.addLayer(aggregateLayer);
+
+
+            //Recenter the map and define a zoom level
+            api.map.setCenter(new OpenLayers.LonLat(600000, 200000), 12);
+        }
+    </script>
+</head>
+<body onload="init();">
+<div id="mymap" style="width:800px;height:600px;padding: 0 0 0 0"></div>
+<script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
+</body>
