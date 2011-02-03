@@ -325,7 +325,7 @@ layouts:
                 align: left
                 maxWidth: 251
                 maxHeight: 34
-                url: "/home/ltmoc/chsdi/chsdi/print/print_logo.png"
+                url: "${configDir}/print_logo.png"
               - !text
                 condition: langde
                 fontSize: 14
