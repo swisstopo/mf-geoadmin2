@@ -288,7 +288,7 @@ layouts:
             borderWidth: 0.5
           items:
               - !text
-                fontSize: 29
+                fontSize: 25
                 text: ' '
                 backgroundColor: white
         - !columns
@@ -570,7 +570,7 @@ layouts:
             borderWidth: 0.5
           items:
               - !text
-                fontSize: 29
+                fontSize: 25
                 text: ' '
                 backgroundColor: white
         - !columns
