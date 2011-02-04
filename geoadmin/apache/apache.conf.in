@@ -1,0 +1,10 @@
+RewriteCond %{HTTP_HOST} ^map.geo.admin.ch
+RewriteCond %{REQUEST_URI} ^${vars:apache-entry-point}build/geoadmin.js [OR]
+RewriteCond %{REQUEST_URI} ^${vars:apache-entry-point}mfbase/ [OR]
+RewriteCond %{REQUEST_URI} ^${vars:apache-entry-point}geoadminApi/ [OR]
+RewriteCond %{REQUEST_URI} ^${vars:apache-entry-point}/gfx
+RewriteRule ^${vars:apache-entry-point}(.*)$  http://mf-geoadmin.bgdi.admin.ch/$1 [L,P]
+
+<Location />
+   allow from all
+</Location>
