@@ -69,7 +69,8 @@ App.Map = function(options) {
         bbar: {
             items: toolbar.bbar
         },
-        items: [permalink, print]
+        items: [permalink, print] ,
+        zoom: 1
     }, options);
     this.mapPanel = new GeoAdmin.MapPanel(options);
 };
