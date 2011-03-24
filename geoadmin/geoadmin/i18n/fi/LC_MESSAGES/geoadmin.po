@@ -36,7 +36,7 @@ msgid "Contact"
 msgstr "Contact"
 
 msgid "Feedback"
-msgstr "Feedback"
+msgstr "Rapportar un problem"
 
 msgid "map.geo.admin.ch"
 msgstr "map.geo.admin.ch"
