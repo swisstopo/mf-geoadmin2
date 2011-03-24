@@ -51,7 +51,7 @@ window.onload = function() {
     };
 
     GeoAdmin.feedbackWindow = new GeoAdmin.FeedbackWindow({
-        url: "${vars:host}${vars:instanceid}/feedback"
+        url: "${vars:host}/${vars:instanceid}/feedback"
     });
 
     var printAction = new App.Print(mapPanel).printAction;
