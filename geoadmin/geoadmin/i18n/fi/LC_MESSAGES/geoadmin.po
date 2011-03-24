@@ -35,6 +35,9 @@ msgstr "Twitter"
 msgid "Contact"
 msgstr "Contact"
 
+msgid "Feedback"
+msgstr "Feedback"
+
 msgid "map.geo.admin.ch"
 msgstr "map.geo.admin.ch"
 

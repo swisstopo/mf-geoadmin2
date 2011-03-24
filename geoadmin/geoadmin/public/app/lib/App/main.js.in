@@ -4,6 +4,7 @@
  * @include LayerTree/lib/LayerTree.js
  * @include CatalogTree/lib/CatalogTree.js
  * @include BodSearch/lib/BodSearchComboBox.js
+ * @include FeedbackWindow/lib/FeedbackWindow.js
  */
 
 /*
@@ -48,6 +49,10 @@ window.onload = function() {
         contentEl: 'header',
         hidden: !!(parameters.noHeader)
     };
+
+    GeoAdmin.feedbackWindow = new GeoAdmin.FeedbackWindow({
+        url: "${vars:host}${vars:instanceid}/feedback"
+    });
 
     var printAction = new App.Print(mapPanel).printAction;
     mapPanel.getTopToolbar().add(printAction);

@@ -14,6 +14,7 @@ setup(
     url='',
     install_requires=[
         "Pylons>=1.0,<=1.0.99",
+        "httplib2",
         "Babel<=0.9.99"
     ],
     #setup_requires=["PasteScript>=1.6.3"],
