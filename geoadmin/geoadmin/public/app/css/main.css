@@ -115,6 +115,10 @@ a:link, a:active, a:visited {
     font-size: 12px;
 }
 
+.x-btn-over button {
+    color: #ff0000;
+}
+
 .x-toolbar .collapse, .x-toolbar .link, .x-toolbar .print {
     font-weight: bold;
 }
