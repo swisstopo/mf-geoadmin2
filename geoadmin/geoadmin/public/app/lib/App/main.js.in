@@ -69,6 +69,8 @@ window.onload = function() {
         }
     });
 
+    Ext.get('expand-collapse-side-panel').addClassOnOver('mouseover');
+
     // the viewport
     new Ext.Viewport({
         layout: "border",

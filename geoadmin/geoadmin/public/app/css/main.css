@@ -140,14 +140,6 @@ a:link, a:active, a:visited {
     margin-right: 6px;
 }
 
-.ext-ie .side-panel-expanded {
-    margin-top: 5px !important;
-}
-
-.ext-ie .side-panel-collapsed {
-    margin-top: 5px !important;
-}
-
 .ext-ie div.navServiceBackground {
     margin-top: -3px;
 }
@@ -157,14 +149,20 @@ a:link, a:active, a:visited {
 }
 
 .side-panel-expanded, .side-panel-collapsed {
-    background-image: url(../images/tb_toggle_button.png);
     background-repeat: no-repeat;
+    background-position: 0px 3px;
 }
+
 .side-panel-expanded {
-    background-position: -14px bottom;
+   background-image: url(../images/tb_toggle_button_expanded.png);
 }
+
 .side-panel-collapsed {
-    background-position: 0 bottom;
+    background-image: url(../images/tb_toggle_button_collapsed.png);
+}
+
+.mouseover {
+    background-position: -14px 3px;
 }
 
 #side-panel-xcollapsed {
