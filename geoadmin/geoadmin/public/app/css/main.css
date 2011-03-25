@@ -127,6 +127,10 @@ a:link, a:active, a:visited {
     background-image: url(../images/tb_fullscreen_logo.png);
 }
 
+.x-toolbar .x-btn-over .collapse {
+    background-image: url(../images/tb_fullscreen_logo_over.png);
+}
+
 .x-toolbar .link {
     background-image: url(../images/tb_link_logo.png);
 }
