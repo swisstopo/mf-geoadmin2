@@ -134,9 +134,19 @@ a:link, a:active, a:visited {
 .x-toolbar .link {
     background-image: url(../images/tb_link_logo.png);
 }
+
+.x-toolbar .x-btn-over .link {
+    background-image: url(../images/tb_link_logo_over.png);
+}
+
 .x-toolbar .print {
     background-image: url(../images/tb_print_logo.png);
 }
+
+.x-toolbar .x-btn-over .print {
+    background-image: url(../images/tb_print_logo_over.png);
+}
+
 .x-btn-text-icon .x-btn-icon-small-right .x-btn-text {
     padding-right: 25px;
 }
