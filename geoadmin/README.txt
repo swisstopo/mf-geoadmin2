@@ -3,7 +3,7 @@ Installation
 
 Install the buildout environment:
 
-  python bootstrap.py --distribute --version 1.5.2
+  python bootstrap.py --version 1.5.2 --distribute --download-base http://pypi.camptocamp.net/ --setup-source http://pypi.camptocamp.net/distribute_setup.py
 
 Install the project:
 
