@@ -126,7 +126,8 @@ window.onload = function() {
                         items: [{
                             xtype: 'ga_bodsearchcombo',
                             anchor: '100%',
-                            map: mapPanel.map
+                            map: mapPanel.map,
+                            project: "${vars:project}" 
                         }]
                     }]
                 }]
