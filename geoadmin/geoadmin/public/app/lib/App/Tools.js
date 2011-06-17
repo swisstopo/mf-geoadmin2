@@ -13,6 +13,16 @@
  * @requires AdvancedFunctions/lib/AdvancedFunctions.js
  * @requires Measure/lib/Measure.js
  * @requires LayerManager/ux/widgets/LayerManagerWindow.js
+ * 
+ * @requires Redlining/ux/FeatureEditing/ux/widgets/FeatureEditingControler.js
+ * @requires Redlining/ux/FeatureEditing/ux/widgets/form/FeatureEditingPanel.js
+ * @requires Redlining/ux/FeatureEditing/ux/widgets/form/RedLiningPanel.js
+ * @requires Redlining/ux/FeatureEditing/ux/widgets/form/FeaturePanel.js
+ * @requires Redlining/ux/FeatureEditing/ux/data/FeatureEditingDefaultStyleStore.js
+ * @requires Redlining/ux/FeatureEditing/ux/widgets/plugins/ImportFeatures.js
+ * @requires Redlining/ux/FeatureEditing/ux/widgets/plugins/ExportFeatures.js
+ * @requires Redlining/ux/FeatureEditing/ux/widgets/plugins/ExportFeature.js
+ * @requires Redlining/ux/FeatureEditing/ux/widgets/plugins/CloseFeatureDialog.js
  */
 
 Ext.namespace('App');
@@ -123,6 +133,14 @@ App.Tools = function(map, permalink) {
             collapsed :true
         });
 
+        var redLiningPanel = new GeoExt.ux.form.RedLiningPanel({
+                title: OpenLayers.i18n("RedLining Panel"),
+                import: false,
+                export: false,
+                map: map,
+                popupOptions: {anchored: false, unpinnable: false, draggable: true}
+            });
+
 
         var advancedTools = new GeoAdmin.AdvancedFunctions({
 
@@ -133,7 +151,8 @@ App.Tools = function(map, permalink) {
             },
             items: [
                measurePanel,
-               importPanel
+               importPanel,
+               redLiningPanel
             ]
         });
 

@@ -29,5 +29,25 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
     // LayerManager
     "ImportExport.title": "KML/GPX",
     "Select a file to import": "Choisir..",
-    "Import": "Ajouter"
+    "Import": "Ajouter",
+
+     // Redlining
+    "RedLining Panel": "Dessin",
+    "MultiPoint": "Multipoint",
+    "Edit Feature": "Éditer",
+    "Polygon": "Polygone",
+    "Point": "Point",
+    "Create point": "Dessiner un point",
+    "Label": "Étiquette",
+    "Create line": "Dessiner une ligne",
+    "Create label": "Écrire du texte",
+    "Export": "Exporter",
+    "Create polygon": "Dessiner un poylgone",
+    "MultiLineString": "Multilgne",
+    "LineString": "Ligne",
+    "MultiPolygon": "Multipolyone",
+    "Close": "Fermer",
+    "select a color...": "changer la couleur",
+    "myOption": "Mes options",
+    "Delete all features": "Tout supprimer"
 });
