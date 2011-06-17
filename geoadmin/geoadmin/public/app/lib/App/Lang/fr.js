@@ -24,5 +24,10 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
     "Print.waitingmessage": "Impression en cours...",
 
     "Permalink.title": "Permalien",
-    "Permalink.openlink": "Ouvrir le lien"
+    "Permalink.openlink": "Ouvrir le lien",
+
+    // LayerManager
+    "ImportExport.title": "KML/GPX",
+    "Select a file to import": "Choisir..",
+    "Import": "Ajouter"
 });

@@ -23,5 +23,9 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
     "Print.waitingmessage": "Printing...",
 
     "Permalink.title": "Permalink",
-    "Permalink.openlink": "Open Link"
+    "Permalink.openlink": "Open Link",
+
+    // LayerManager
+    "Select a file to import": "Select a file to import",
+    "Import": "Import"
 });
