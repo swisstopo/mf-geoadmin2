@@ -51,10 +51,10 @@ App.Tools = function(map, permalink) {
      */
     var getTbarItems = function(map) {
         var link = new Ext.Button({
-            text: OpenLayers.i18n('permalink action'), 
+            text: OpenLayers.i18n('permalink action'),
             cls: 'x-btn-no-over',
-            iconAlign: 'right', 
-            iconCls: 'link', 
+            iconAlign: 'right',
+            iconCls: 'link',
             enableToggle: true,
             toggleGroup: 'tools',
             toggleHandler: function(btn, state) {
@@ -65,7 +65,7 @@ App.Tools = function(map, permalink) {
             this.toggle(false, true /* supressEvent */);
         }, link);
 
-         var sketchSymbolizers = {
+        var sketchSymbolizers = {
             "Point": {
                 pointRadius: 4,
                 graphicName: "square",
@@ -93,7 +93,8 @@ App.Tools = function(map, permalink) {
             "default": new OpenLayers.Style(null, {
                 rules: [new OpenLayers.Rule({symbolizer: sketchSymbolizers})]
             })
-        })
+        });
+        
         var measureLength = new GeoExt.ux.MeasureLength({
             autoDeactivate: true,
             styleMap: styleMap,
@@ -125,21 +126,21 @@ App.Tools = function(map, permalink) {
             title: OpenLayers.i18n('ImportExport.title'),
             height: 70,
             items: [
-                     new GeoExt.ux.LayerManagerImportPanel({
-        map: map,
-        defaultFormat: 'KML'
-    })
+                new GeoExt.ux.LayerManagerImportPanel({
+                    map: map,
+                    defaultFormat: 'KML'
+                })
             ],
             collapsed :true
         });
 
         var redLiningPanel = new GeoExt.ux.form.RedLiningPanel({
-                title: OpenLayers.i18n("RedLining Panel"),
-                import: false,
-                export: false,
-                map: map,
-                popupOptions: {anchored: false, unpinnable: false, draggable: true}
-            });
+            title: OpenLayers.i18n("RedLining Panel"),
+            "import": false,
+            "export": false,
+            map: map,
+            popupOptions: {anchored: false, unpinnable: false, draggable: true}
+        });
 
 
         var advancedTools = new GeoAdmin.AdvancedFunctions({
@@ -150,17 +151,17 @@ App.Tools = function(map, permalink) {
                 activeOnTop: true
             },
             items: [
-               measurePanel,
-               importPanel,
-               redLiningPanel
+                measurePanel,
+                importPanel,
+                redLiningPanel
             ]
         });
 
         return [new GeoAdmin.BaseLayerTool({map: map, slider: {width: 100}}),
-                new GeoAdmin.NavigationHistory({defaults: {cls: 'x-btn-no-over'}, map: map}),
-                new GeoAdmin.SwissSearchComboBox({map: map, width: 200}),
-                '->', link,
-                advancedTools];
+            new GeoAdmin.NavigationHistory({defaults: {cls: 'x-btn-no-over'}, map: map}),
+            new GeoAdmin.SwissSearchComboBox({map: map, width: 200}),
+            '->', link,
+            advancedTools];
     };
 
     /**
@@ -178,9 +179,9 @@ App.Tools = function(map, permalink) {
         var c_text = OpenLayers.i18n('Copyright &amp; Data protection');
         var p_href = "http://www.geo.admin.ch/internet/geoportal/" + OpenLayers.Lang.getCode() + "/home.html";
         return [new GeoAdmin.MousePositionBox({map: this.map}), '->',
-                {xtype: 'tbtext', text: '<a target="_blank" href="' + p_href + '">geo.admin.ch</a>'},
-                {xtype: 'tbtext', text: '&nbsp;', cls: 'pipe'}, 
-                {xtype: 'tbtext', text: '<a target="_blank" href="' + c_href + '">' + c_text + '</a>'}]
+            {xtype: 'tbtext', text: '<a target="_blank" href="' + p_href + '">geo.admin.ch</a>'},
+            {xtype: 'tbtext', text: '&nbsp;', cls: 'pipe'},
+            {xtype: 'tbtext', text: '<a target="_blank" href="' + c_href + '">' + c_text + '</a>'}]
     };
 
     // Public
