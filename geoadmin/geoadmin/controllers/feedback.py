@@ -28,7 +28,9 @@ class FeedbackController(BaseController):
         email = request.params.get('email','Anonymous')
         permalink = request.params.get('permalink', 'no permalink provided')
         feedback = request.params.get('feedback','no feedback provided')
-        self.mail('webgis@swisstopo.ch',"Customer feedback",email + " just sent a feedback:\n" + feedback + ". \nPermalink: "+ permalink)
+        ua = request.params.get('ua','no user-agent found')
+        self.mail('webgis@swisstopo.ch',"Customer feedback",email + " just sent a feedback:\n" + feedback + ". \nPermalink: "+ permalink + "\n\nUser-Agent: " + ua)
+
         return dumps({"success": True})
 
     def mail(self, to, subject, text):
