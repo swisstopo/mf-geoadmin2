@@ -147,6 +147,10 @@ a:link, a:active, a:visited {
     background-image: url(../images/tb_print_logo_over.png);
 }
 
+.x-toolbar .tools {
+    background-image: url(../images/tb_tools_logo.png);
+}
+
 .x-btn-text-icon .x-btn-icon-small-right .x-btn-text {
     padding-right: 25px;
 }

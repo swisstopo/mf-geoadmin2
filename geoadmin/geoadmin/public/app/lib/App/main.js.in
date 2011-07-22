@@ -5,6 +5,7 @@
  * @include CatalogTree/lib/CatalogTree.js
  * @include BodSearch/lib/BodSearchComboBox.js
  * @include FeedbackWindow/lib/FeedbackWindow.js
+ * @include WmsBrowser/lib/WmsBrowser.js
  */
 
 /*
@@ -27,6 +28,7 @@ window.onload = function() {
     OpenLayers.Lang.setCode(parameters.lang || "de");
     OpenLayers.Number.thousandsSeparator = ' ';
     OpenLayers.IMAGE_RELOAD_ATTEMPTS = 0;
+    OpenLayers.ProxyHost = "${vars:apache-entry-point}ogcproxy?url=";
 
     /*
      * Setting of Ext global vars.
@@ -53,6 +55,16 @@ window.onload = function() {
     GeoAdmin.feedbackWindow = new GeoAdmin.FeedbackWindow({
         url: "feedback"
     });
+    var advancedMenu = new Ext.Button({
+            cls: 'x-btn-no-over',
+            iconAlign: 'right',
+            iconCls: 'tools',
+            enableToggle: true,
+            toggleGroup: 'tools',
+            menu: [new GeoAdmin.WmsBrowser(mapPanel, {})]
+
+     });
+    mapPanel.getTopToolbar().add(advancedMenu);
 
     var printAction = new App.Print(mapPanel).printAction;
     mapPanel.getTopToolbar().add(printAction);
