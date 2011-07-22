@@ -6,6 +6,7 @@
  * @include BodSearch/lib/BodSearchComboBox.js
  * @include FeedbackWindow/lib/FeedbackWindow.js
  * @include WmsBrowser/lib/WmsBrowser.js
+ * @include Measure/lib/Measure.js
  */
 
 /*
@@ -61,7 +62,8 @@ window.onload = function() {
             iconCls: 'tools',
             enableToggle: true,
             toggleGroup: 'tools',
-            menu: [new GeoAdmin.WmsBrowser(mapPanel, {})]
+            menu: [new GeoAdmin.WmsBrowser(mapPanel, {}),
+                   new GeoAdmin.Measure({map: mapPanel.map})]
 
      });
     mapPanel.getTopToolbar().add(advancedMenu);
