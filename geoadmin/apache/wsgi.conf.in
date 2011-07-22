@@ -27,8 +27,8 @@ RewriteRule ^/${vars:instanceid}/wsgi/[0-9a-fA-F]*/(app|build|lib)/(.*)$  ${buil
     Header unset Etag
 </LocationMatch>
 
-# checker and feedback:
-RewriteRule ^${vars:apache-entry-point}(checker|feedback)(.*)$ /${vars:instanceid}/wsgi/$1$2 [PT]
+# ogcproxy, checker and feedback:
+RewriteRule ^${vars:apache-entry-point}(checker|feedback|ogcproxy)(.*)$ /${vars:instanceid}/wsgi/$1$2 [PT]
 
 RewriteRule ^${vars:apache-entry-point}$ /${vars:instanceid}/wsgi/ [PT]
 

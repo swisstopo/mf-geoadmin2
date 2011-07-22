@@ -23,7 +23,11 @@ def make_map(config):
 
     # CUSTOM ROUTES HERE
     map.connect('/checker', controller='checker', action='index')
+    map.connect('/ogcproxy', controller='ogcproxy', action='index')
     map.connect('/', controller='entry', action='index')
+
+
+
 
     map.connect('/{controller}/{action}')
     map.connect('/{controller}/{action}/{id}')
