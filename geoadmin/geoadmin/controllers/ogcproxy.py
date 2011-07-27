@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import logging
 import httplib2
 from urlparse import urlparse
@@ -73,4 +75,16 @@ class OgcproxyController(BaseController):
 
         response.status = resp.status
 
-        return content
+        # Manage encoding
+        if resp['server'].find('Win32') > 0:
+            encodings = ('latin-1','iso-8859-7','iso-8859-1')
+
+            for enc in encodings:
+                try:
+                    data = content.decode(enc)
+                    break
+                except Exception:
+                    continue
+            return data.encode('utf-8')
+        else:
+            return content

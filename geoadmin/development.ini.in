@@ -21,7 +21,7 @@ static_files = true
 set debug = true
 cache_dir = /tmp/geoadmin-${instanceid}_dev_beaker_data
 
-version =  # keep this empty !
+version = ${app-version}
 
 # Logging configuration
 [loggers]
