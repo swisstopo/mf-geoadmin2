@@ -62,7 +62,7 @@ window.onload = function() {
             iconCls: 'tools',
             enableToggle: true,
             toggleGroup: 'tools',
-            menu: [new GeoAdmin.WmsBrowser(mapPanel, {}),
+            menu: [new GeoAdmin.WmsBrowser({layerStore: mapPanel.layers}),
                    new GeoAdmin.Measure({map: mapPanel.map})]
 
      });
