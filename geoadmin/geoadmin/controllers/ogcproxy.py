@@ -2,6 +2,7 @@
 
 import logging
 import httplib2
+import re
 from urlparse import urlparse
 
 from pylons import request, response
@@ -76,15 +77,12 @@ class OgcproxyController(BaseController):
         response.status = resp.status
 
         # Manage encoding
-        if resp['server'].find('Win32') > 0:
-            encodings = ('latin-1','iso-8859-7','iso-8859-1')
-
-            for enc in encodings:
-                try:
-                    data = content.decode(enc)
-                    break
-                except Exception:
-                    continue
+        if content.find('encoding=') > 0:
+            m = re.search("encoding=\"(.*?)\\\"",content)
+            try:
+                data = content.decode(m.group(1))
+            except Exception:
+                abort(406)
             return data.encode('utf-8')
         else:
             return content
