@@ -16,7 +16,7 @@ Ext.namespace('App');
  * Parameters:
  * map - {OpenLayers.Map} The map object.
  */
-App.Tools = function(map, permalink) {
+App.Tools = function(map, permalink, advanced) {
 
     // Private
 
@@ -45,6 +45,20 @@ App.Tools = function(map, permalink) {
         permalink.on('hide', function(p) {
             this.toggle(false, true /* supressEvent */);
         }, link);
+
+        var tools = new Ext.Button({
+            cls: 'x-btn-no-over',
+            iconAlign: 'right',
+            iconCls: 'tools',
+            enableToggle: true,
+            toggleGroup: 'tools',
+            toggleHandler: function(btn, state) {
+                advanced.setVisible(state);
+            }
+        });
+        advanced.on('hide', function(p) {
+            this.toggle(false, true /* supressEvent */);
+        }, tools);
 
         return [new GeoAdmin.BaseLayerTool({map: map, slider: {width: 100}}),
                 new GeoAdmin.NavigationHistory({defaults: {cls: 'x-btn-no-over'}, map: map}),
