@@ -6,7 +6,6 @@
  * @include Features/lib/Tooltip.js
  * @include Permalink/lib/Permalink.js
  * @include ContextPopup/lib/ContextPopup.js
- * @include AdvancedFunctions/lib/AdvancedPanel.js
  */
 
 Ext.namespace('App');
@@ -55,17 +54,13 @@ App.Map = function(options) {
         hidden: true
     });
 
-    var advanced  = new GeoAdmin.AdvancedPanel({
-        hidden:true
-    });
-
     var print = new Ext.Panel({
         cls: "print-panel",
         id: "print-panel",
         style: "visibility: hidden; "
     });
 
-    var toolbar = new App.Tools(map, permalink, advanced);
+    var toolbar = new App.Tools(map, permalink);
 
     options = Ext.apply({
         map: map,

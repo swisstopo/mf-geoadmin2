@@ -46,20 +46,6 @@ App.Tools = function(map, permalink, advanced) {
             this.toggle(false, true /* supressEvent */);
         }, link);
 
-        var tools = new Ext.Button({
-            cls: 'x-btn-no-over',
-            iconAlign: 'right',
-            iconCls: 'tools',
-            enableToggle: true,
-            toggleGroup: 'tools',
-            toggleHandler: function(btn, state) {
-                advanced.setVisible(state);
-            }
-        });
-        advanced.on('hide', function(p) {
-            this.toggle(false, true /* supressEvent */);
-        }, tools);
-
         return [new GeoAdmin.BaseLayerTool({map: map, slider: {width: 100}}),
                 new GeoAdmin.NavigationHistory({defaults: {cls: 'x-btn-no-over'}, map: map}),
                 new GeoAdmin.SwissSearchComboBox({map: map, width: 200}),
