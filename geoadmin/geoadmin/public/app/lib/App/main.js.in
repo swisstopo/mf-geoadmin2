@@ -64,8 +64,7 @@ window.onload = function() {
             toggleGroup: 'tools',
             menu: [new GeoAdmin.WmsBrowser({layerStore: mapPanel.layers}),
                    new GeoAdmin.Measure({map: mapPanel.map})]
-
-     });
+    });
     mapPanel.getTopToolbar().add(advancedMenu);
 
     var printAction = new App.Print(mapPanel).printAction;

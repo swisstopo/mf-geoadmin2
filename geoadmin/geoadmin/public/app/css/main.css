@@ -255,4 +255,22 @@ a:link, a:active, a:visited {
     height: 0px !important;
 }
 
+.x-menu-floating {
+   border-color: #000000;
+}
 
+.x-menu-list a:link, .x-menu-list a:active, .x-menu-list a:visited {
+    color: #000000;
+}
+
+.x-menu-list {
+    background-color: #FFFFFF;
+}
+
+.x-menu-floating {
+   top: 151px !important;
+   border-top-width: 0px;
+}
+.ext-ie .x-menu-floating {
+   top: 152px !important;
+}
