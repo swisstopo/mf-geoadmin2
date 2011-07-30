@@ -7,6 +7,7 @@
  * @include FeedbackWindow/lib/FeedbackWindow.js
  * @include WmsBrowser/lib/WmsBrowser.js
  * @include Measure/lib/Measure.js
+ * @include KmlSelector/lib/KmlSelector.js
  */
 
 /*
@@ -63,8 +64,10 @@ window.onload = function() {
             enableToggle: true,
             toggleGroup: 'tools',
             menu: [new GeoAdmin.WmsBrowser({layerStore: mapPanel.layers}),
+                   new GeoAdmin.KmlSelector({map: mapPanel.map}),
                    new GeoAdmin.Measure({map: mapPanel.map})]
-    });
+
+     });
     mapPanel.getTopToolbar().add(advancedMenu);
 
     var printAction = new App.Print(mapPanel).printAction;
