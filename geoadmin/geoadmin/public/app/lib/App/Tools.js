@@ -35,7 +35,6 @@ App.Tools = function(map, permalink, advanced) {
             text: OpenLayers.i18n('permalink action'), 
             cls: 'x-btn-no-over',
             iconAlign: 'right', 
-            iconCls: 'link', 
             enableToggle: true,
             toggleGroup: 'tools',
             toggleHandler: function(btn, state) {

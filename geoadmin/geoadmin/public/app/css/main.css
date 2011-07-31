@@ -131,14 +131,6 @@ a:link, a:active, a:visited {
     background-image: url(../images/tb_fullscreen_logo_over.png);
 }
 
-.x-toolbar .link {
-    background-image: url(../images/tb_link_logo.png);
-}
-
-.x-toolbar .x-btn-over .link {
-    background-image: url(../images/tb_link_logo_over.png);
-}
-
 .x-toolbar .print {
     background-image: url(../images/tb_print_logo.png);
 }
@@ -157,6 +149,14 @@ a:link, a:active, a:visited {
 
 .x-btn-text-icon .x-btn-icon-small-right .x-btn-text {
     padding-right: 25px;
+}
+
+.x-toolbar .x-btn button {
+    font-weight: bold;
+}
+
+ .x-toolbar .x-btn-icon .print {
+    margin-top: -3px;
 }
 
 #expand-collapse-side-panel {
