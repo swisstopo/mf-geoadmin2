@@ -27,7 +27,10 @@ window.onload = function() {
 
     var parameters = OpenLayers.Util.getParameters();
 
-    OpenLayers.Lang.setCode(parameters.lang || "de");
+    if (parameters.lang) {
+        OpenLayers.Lang.setCode(parameters.lang);
+    }
+
     OpenLayers.Number.thousandsSeparator = ' ';
     OpenLayers.IMAGE_RELOAD_ATTEMPTS = 0;
     OpenLayers.ProxyHost = "${vars:apache-entry-point}ogcproxy?url=";

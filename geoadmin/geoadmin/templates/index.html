@@ -20,6 +20,7 @@
 % endif
         <script type="text/javascript">
             OpenLayers.ImgPath = "${url(h.versioned('/lib/GeoAdmin.ux/Map/img/'))}";
+            OpenLayers.Lang.setCode("${c.lang}");
             GeoAdmin.printBaseUrl = "${url('/print/pdf/')}";
         </script>
     </head>

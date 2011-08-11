@@ -12,7 +12,12 @@ class EntryController(BaseController):
 
     def index(self):
         c.debug = "debug" in request.params
-        c.lang = str(request.params.get("lang", config.get("default_lang")))
+        default_lang = config.get("default_lang")
+        for lang in request.languages:
+            if lang[:2] in ['de','fr','rm','it','en']:
+                default_lang = lang[:2]
+                break
+        c.lang = str(request.params.get("lang", default_lang))
         if c.lang == 'rm':
            set_lang('fi', fallback=True)
         else:
