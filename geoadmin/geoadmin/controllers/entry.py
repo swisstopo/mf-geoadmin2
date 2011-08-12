@@ -23,4 +23,7 @@ class EntryController(BaseController):
         else:
            set_lang(c.lang, fallback=True)
 
+        c.mobilegeoadmin_host = config.get("mobilegeoadmin_host")
+        c.mapgeoadmin_host = config.get("mapgeoadmin_host")
+
         return render("index.html")

@@ -15,6 +15,8 @@ use = egg:geoadmin
 full_stack = true
 static_files = false
 version = ${app-version}
+mobilegeoadmin_host = ${mobilegeoadmin_host}
+mapgeoadmin_host = ${host}${apache-entry-point}
 
 cache_dir = /tmp/geoadmin-${instanceid}_prod_beaker_data
 

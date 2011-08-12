@@ -1,32 +1,86 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta name="Content-Language" content="${c.lang}" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="Content-Language" content="${c.lang}"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
 
-        <title>${_('map.geo.admin.ch')}</title>
+    <title>${_('map.geo.admin.ch')}</title>
 
-        <link rel="shortcut icon" type="image/x-icon" href="${url(h.versioned('/app/images/favicon.ico'))}" />
+    <link rel="shortcut icon" type="image/x-icon" href="${url(h.versioned('/app/images/favicon.ico'))}"/>
 
-% if c.debug:
-        <!-- fixme css in debug mode -->
-        <!-- fixme js in debug mode -->
-% else:
-        <link rel="stylesheet" type="text/css" href="${url(h.versioned('/build/app.css'))}" />
-        <script type="text/javascript" src="${url(h.versioned('/build/ext.js'))}"></script>
-        <script type="text/javascript" src="${url(h.versioned('/build/app.js'))}"></script>
-        <script type="text/javascript" src="${url(h.versioned('/build/lang-%s.js' % c.lang))}"></script>
-% endif
-        <script type="text/javascript">
-            OpenLayers.ImgPath = "${url(h.versioned('/lib/GeoAdmin.ux/Map/img/'))}";
-            OpenLayers.Lang.setCode("${c.lang}");
-            GeoAdmin.printBaseUrl = "${url('/print/pdf/')}";
-        </script>
-    </head>
+    % if c.debug:
+    <!-- fixme css in debug mode -->
+    <!-- fixme js in debug mode -->
+    % else:
+    <link rel="stylesheet" type="text/css" href="${url(h.versioned('/build/app.css'))}"/>
+    <script type="text/javascript" src="${url(h.versioned('/build/ext.js'))}"></script>
+    <script type="text/javascript" src="${url(h.versioned('/build/app.js'))}"></script>
+    <script type="text/javascript" src="${url(h.versioned('/build/lang-%s.js' % c.lang))}"></script>
+    % endif
+    <script type="text/javascript">
+        OpenLayers.ImgPath = "${url(h.versioned('/lib/GeoAdmin.ux/Map/img/'))}";
+        OpenLayers.Lang.setCode("${c.lang}");
+        GeoAdmin.printBaseUrl = "${url('/print/pdf/')}";
+    </script>
+    <script type="text/javascript" src="${url(h.versioned('/app/lib/App/WebKitDetect.js'))}"></script>
+    <script type="text/javascript">
+        var isWebKit = WebKitDetect.isWebKit();
+        var isMobile = WebKitDetect.isMobile();
 
-    <body>
-        <div class="webBlindThis">${_('blind warning')}</div>
-        <%include file="index.header.html"/>
-    </body>
+        // Read the permalink
+        var permalink = "";
+        var mobileUrl = "${c.mobilegeoadmin_host}";
+        var desktopUrl = "${c.mapgeoadmin_host}";
+
+        if (window.location.hash.length > 0) {
+            permalink = window.location.hash.substr(1);
+        }
+        if (window.location.search.length > 0) {
+            permalink = window.location.search.substr(1);
+        }
+
+        // Permalink parser
+        function getQueryString(permalink, key) {
+            key = key.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+            var regex = new RegExp("[\\?&]" + key + "([^&#]*)");
+            var qs = regex.exec(permalink);
+            if (qs == null) {
+                return null;
+            } else {
+                return qs[1];
+            }
+        }
+
+        // Manage mobile parameter
+        var mobileParameter = getQueryString("?" + permalink, "mobile");
+        if (mobileParameter) {
+            if (mobileParameter.substr(1) == "true") {
+                if (window.location.href.indexOf(mobileUrl) == -1) {
+                    window.location = mobileUrl + (permalink != "" ? "#" + permalink : "");
+                }
+            } else {
+                if (window.location.href.indexOf(desktopUrl) == -1) {
+                    window.location = desktopUrl + (permalink != "" ? "?" + permalink : "");
+                }
+            }
+        } else {
+            // Manage WebKit
+            if (isWebKit && isMobile) {
+                if (window.location.href.indexOf(mobileUrl) == -1) {
+                    window.location = mobileUrl + (permalink != "" ? "#" + permalink : "");
+                }
+            } else {
+                if (window.location.href.indexOf(desktopUrl) == -1) {
+                    window.location = desktopUrl + (permalink != "" ? "?" + permalink : "");
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+<div class="webBlindThis">${_('blind warning')}</div>
+<%include file="index.header.html"/>
+</body>
 </html>
