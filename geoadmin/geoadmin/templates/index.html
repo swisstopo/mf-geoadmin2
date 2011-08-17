@@ -8,7 +8,12 @@
     <title>${_('map.geo.admin.ch')}</title>
 
     <link rel="shortcut icon" type="image/x-icon" href="${url(h.versioned('/app/images/favicon.ico'))}"/>
+    <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+    <script type="text/javascript">
+        stLight.options({publisher:'b7834581-dab8-4a2b-bf6f-1f877b458782'});
+    </script>
 
+    
     % if c.debug:
     <!-- fixme css in debug mode -->
     <!-- fixme js in debug mode -->
@@ -77,10 +82,12 @@
             }
         }
     </script>
+    <span id="sharethis_permalink" class="st_sharethis" style="display: none;visibility: hidden;">Share</span>
 </head>
 
 <body>
 <div class="webBlindThis">${_('blind warning')}</div>
+
 <%include file="index.header.html"/>
 </body>
 </html>
