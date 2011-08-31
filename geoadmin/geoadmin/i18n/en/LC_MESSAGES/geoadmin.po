@@ -89,6 +89,6 @@ msgstr "http://www.twitter.com/swiss_geoportal"
 msgid "twitter title"
 msgstr "Twitter"
 
-msgid "BETA mobile version"
+msgid "Mobile version"
 msgstr "BETA mobile version"
 

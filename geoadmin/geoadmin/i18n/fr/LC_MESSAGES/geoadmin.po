@@ -93,5 +93,5 @@ msgid "twitter title"
 msgstr "Twitter"
 
 msgid "BETA mobile version"
-msgstr "version natel BETA"
+msgstr "Version mobile"
 
