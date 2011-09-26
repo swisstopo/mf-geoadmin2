@@ -16,7 +16,7 @@ Ext.namespace('App');
  * Parameters:
  * map - {OpenLayers.Map} The map object.
  */
-App.Tools = function(map, permalink, advanced) {
+App.Tools = function(map) {
 
     // Private
 
@@ -31,24 +31,11 @@ App.Tools = function(map, permalink, advanced) {
      * {Array} An array of toolbar items.
      */
     var getTbarItems = function(map) {
-        var link = new Ext.Button({
-            text: OpenLayers.i18n('permalink action'), 
-            cls: 'x-btn-no-over permalink',
-            iconAlign: 'right', 
-            enableToggle: true,
-            toggleGroup: 'tools',
-            toggleHandler: function(btn, state) {
-                permalink.setVisible(state);
-            }
-        });
-        permalink.on('hide', function(p) {
-            this.toggle(false, true /* supressEvent */);
-        }, link);
 
         return [new GeoAdmin.BaseLayerTool({map: map, slider: {width: 100}}),
                 new GeoAdmin.NavigationHistory({defaults: {cls: 'x-btn-no-over'}, map: map}),
                 new GeoAdmin.SwissSearchComboBox({map: map, width: 200}),
-                '->', link];
+                '->'];
     };
 
     /**

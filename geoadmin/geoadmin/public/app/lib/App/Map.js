@@ -6,6 +6,7 @@
  * @include Features/lib/Tooltip.js
  * @include Permalink/lib/Permalink.js
  * @include ContextPopup/lib/ContextPopup.js
+ * @include BaseTools/lib/BaseTools.js
  */
 
 Ext.namespace('App');
@@ -50,17 +51,7 @@ App.Map = function(options) {
         })
     ]);
 
-    var permalink = new GeoAdmin.PermalinkPanel({
-        hidden: true
-    });
-
-    var print = new Ext.Panel({
-        cls: "print-panel",
-        id: "print-panel",
-        style: "visibility: hidden; "
-    });
-
-    var toolbar = new App.Tools(map, permalink);
+    var toolbar = new App.Tools(map);
 
     options = Ext.apply({
         map: map,
@@ -71,8 +62,10 @@ App.Map = function(options) {
         bbar: {
             items: toolbar.bbar
         },
-        items: [permalink, print] ,
         zoom: 1
     }, options);
     this.mapPanel = new GeoAdmin.MapPanel(options);
+
+    var tools = new GeoAdmin.BaseTools({mapPanel: this.mapPanel});
+    tools.addToToolbar(this.mapPanel.getTopToolbar());
 };

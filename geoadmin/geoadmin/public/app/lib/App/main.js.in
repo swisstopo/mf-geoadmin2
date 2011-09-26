@@ -60,21 +60,6 @@ window.onload = function() {
     GeoAdmin.feedbackWindow = new GeoAdmin.FeedbackWindow({
         url: "feedback"
     });
-    var advancedMenu = new Ext.Button({
-            cls: 'x-btn-no-over',
-            iconAlign: 'right',
-            iconCls: 'tools',
-            enableToggle: true,
-            toggleGroup: 'tools',
-            menu: [new GeoAdmin.WmsBrowser({layerStore: mapPanel.layers}),
-                   new GeoAdmin.KmlSelector({map: mapPanel.map}),
-                   new GeoAdmin.Measure({map: mapPanel.map})]
-
-     });
-    mapPanel.getTopToolbar().add(advancedMenu);
-
-    var printAction = new App.Print(mapPanel).printAction;
-    mapPanel.getTopToolbar().add(printAction);
 
     Ext.get('expand-collapse-side-panel').on('click', function(evt, el) {
         var p = Ext.getCmp('side-panel');
