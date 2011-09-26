@@ -109,55 +109,6 @@ a:link, a:active, a:visited {
     background-color: red;
 }
 
-/*************************/
-.x-btn button {
-    color: black;
-    font-size: 12px;
-}
-
-.x-btn-over button {
-    color: #ff0000;
-}
-
-.x-toolbar .collapse, .x-toolbar .link, .x-toolbar .print {
-    font-weight: bold;
-}
-
-.x-toolbar .collapse {
-    background-image: url(../images/tb_fullscreen_logo.png);
-}
-
-.x-toolbar .x-btn-over .collapse {
-    background-image: url(../images/tb_fullscreen_logo_over.png);
-}
-
-.x-toolbar .print {
-    background-image: url(../images/tb_print_logo.png);
-}
-
-.x-toolbar .x-btn-over .print {
-    background-image: url(../images/tb_print_logo_over.png);
-}
-
-.x-toolbar .tools {
-    background-image: url(../images/tb_tools_logo.png);
-}
-
-.x-toolbar .x-btn-over .tools {
-    background-image: url(../images/tb_tools_logo_over.png);
-}
-
-.x-btn-text-icon .x-btn-icon-small-right .x-btn-text {
-    padding-right: 25px;
-}
-
-.x-toolbar .permalink button {
-    font-weight: bold;
-}
-
- .x-toolbar .x-btn-icon .print {
-    margin-top: -3px;
-}
 
 #expand-collapse-side-panel {
     height: 100%;
