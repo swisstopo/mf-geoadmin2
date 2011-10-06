@@ -69,7 +69,8 @@ App.Map = function(options) {
     var tools = new GeoAdmin.BaseTools({
         mapPanel: this.mapPanel,
         print: {
-            configureLegend:false}}
-            );
+            configureLegend:false
+	}
+    });
     tools.addToToolbar(this.mapPanel.getTopToolbar());
 };
