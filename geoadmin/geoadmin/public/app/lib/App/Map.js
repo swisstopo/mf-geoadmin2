@@ -66,6 +66,10 @@ App.Map = function(options) {
     }, options);
     this.mapPanel = new GeoAdmin.MapPanel(options);
 
-    var tools = new GeoAdmin.BaseTools({mapPanel: this.mapPanel});
+    var tools = new GeoAdmin.BaseTools({
+        mapPanel: this.mapPanel,
+        print: {
+            configureLegend:false}}
+            );
     tools.addToToolbar(this.mapPanel.getTopToolbar());
 };

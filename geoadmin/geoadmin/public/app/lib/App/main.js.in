@@ -1,6 +1,5 @@
 /*
  * @include App/Map.js
- * @include App/Print.js
  * @include LayerTree/lib/LayerTree.js
  * @include CatalogTree/lib/CatalogTree.js
  * @include BodSearch/lib/BodSearchComboBox.js
